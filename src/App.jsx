@@ -1,10 +1,13 @@
-import "./App.css";
-
+import AppRoutes from "./routes/AppRoutes";
+import { BrowserRouter } from "react-router";
+import AuthContextProvider from "./context/AuthContextProvider";
 function App() {
   return (
-    <>
-      <p className="text-3xl">npm run dev</p>
-    </>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 
