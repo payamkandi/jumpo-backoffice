@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
 import Layout from "../components/layout/Layout";
 import { Navigate, Route, Routes } from "react-router";
-import { AuthContext } from "../context/AuthContext";
+import Login from "../pages/Login/Login";
+import { useAuthStore } from "../store/authStore";
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useAuthStore();
   return isAuthenticated ? (
     <Layout>{children}</Layout>
   ) : (

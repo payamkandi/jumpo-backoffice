@@ -1,0 +1,238 @@
+$animation: all 0.2s;
+
+$checked: #40bf6a;
+$unchecked: #c2cfd6;
+$checked-hover: #349d57;
+$unchecked-hover: #9ab0bc;
+$checked-disabled: #b2e6c3;
+$unchecked-disabled: #e0e7eb;
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #f6f8f9;
+  border-radius: 100%;
+  transition: $animation;
+
+  & .type2 {
+    height: 4px;
+    width: 4px;
+    background-color: $unchecked;
+    border-radius: 20px;
+    transition: $animation;
+  }
+
+  & .type3 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: $animation;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background-color: $unchecked;
+      height: 10px;
+      width: 2px;
+      border-radius: 20px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: $animation;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background-color: $unchecked;
+      height: 10px;
+      width: 2px;
+      border-radius: 20px;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transition: $animation;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: $unchecked;
+  border-radius: 20px;
+  padding: 2px 0;
+  transition: $animation;
+  cursor: pointer;
+  &:hover {
+    background-color: $unchecked-hover;
+    & .inner {
+      & .type2 {
+        background-color: $unchecked-hover;
+      }
+      & .type3 {
+        &::after {
+          background-color: $unchecked-hover;
+        }
+        &::before {
+          background-color: $unchecked-hover;
+        }
+      }
+    }
+  }
+  &.disabled {
+    background-color: $unchecked-disabled;
+    cursor: unset;
+    & .inner {
+      & .type2 {
+        background-color: $unchecked-disabled;
+      }
+      & .type3 {
+        &::after {
+          background-color: $unchecked-disabled;
+        }
+        &::before {
+          background-color: $unchecked-disabled;
+        }
+      }
+    }
+    &:hover {
+      background-color: $unchecked-disabled;
+      & .inner {
+        & .type2 {
+          background-color: $unchecked-disabled;
+        }
+        & .type3 {
+          &::after {
+            background-color: $unchecked-disabled;
+          }
+          &::before {
+            background-color: $unchecked-disabled;
+          }
+        }
+      }
+    }
+  }
+  &.small {
+    width: 40px;
+    height: 20px;
+    & .inner {
+      height: 16px;
+      width: 16px;
+      & .type2 {
+        height: 2px;
+        width: 2px;
+      }
+      & .type3 {
+        &::after {
+          height: 8px;
+        }
+        &::before {
+          height: 8px;
+        }
+      }
+    }
+
+    &.checked {
+      & .inner {
+        left: 22px;
+        & .type2 {
+          height: 8px;
+        }
+        & .type3 {
+          &::after {
+            height: 5px;
+          }
+          &::before {
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checked {
+  & .inner {
+    left: 26px;
+    & .type2 {
+      height: 10px;
+      width: 2px;
+      background-color: $checked;
+    }
+    & .type3 {
+      &::before {
+        left: 60%;
+        top: 50%;
+        height: 10px;
+        width: 2px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: $checked;
+      }
+      &::after {
+        left: 35%;
+        top: 60%;
+        height: 6px;
+        width: 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: $checked;
+      }
+    }
+  }
+  background-color: $checked;
+  &:hover {
+    background-color: $checked-hover;
+    & .inner {
+      & .type2 {
+        background-color: $checked-hover;
+      }
+      & .type3 {
+        &::after {
+          background-color: $checked-hover;
+        }
+        &::before {
+          background-color: $checked-hover;
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    background-color: $checked-disabled;
+    cursor: unset;
+    & .inner {
+      & .type2 {
+        background-color: $checked-disabled;
+      }
+      & .type3 {
+        &::after {
+          background-color: $checked-disabled;
+        }
+        &::before {
+          background-color: $checked-disabled;
+        }
+      }
+    }
+    &:hover {
+      background-color: $checked-disabled;
+      & .inner {
+        & .type2 {
+          background-color: $checked-disabled;
+        }
+        & .type3 {
+          &::after {
+            background-color: $checked-disabled;
+          }
+          &::before {
+            background-color: $checked-disabled;
+          }
+        }
+      }
+    }
+  }
+}
