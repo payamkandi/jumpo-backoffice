@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  max-width: 1900px;
+  height: 100dvh;
+  margin: auto;
+}
+
+@layer utilities {
+  .login-gradient {
+    @apply rounded-lg;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: hard-light;
+    background-image: linear-gradient(
+        197.88deg,
+        rgba(132, 43, 167, 0.9) -0.05%,
+        rgba(61, 30, 60, 0.9) 98.55%
+      ),
+      url("../public/login.png");
+  }
+}
