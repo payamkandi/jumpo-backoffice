@@ -1,29 +1,26 @@
-import Home from "../pages/Home";
 import Layout from "../components/layout/Layout";
-import { Navigate, Route, Routes } from "react-router";
 import Login from "../pages/Login/Login";
+import { Navigate, Outlet, Route, Routes } from "react-router";
 import { useAuthStore } from "../store/authStore";
+import Home from "../pages/Home";
 
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuthStore();
+const ProtectedRoute = () => {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   return isAuthenticated ? (
-    <Layout>{children}</Layout>
+    <Layout>
+      <Outlet />
+    </Layout>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/" />
   );
 };
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/login" element={<Login />} />
-    <Route
-      path="/"
-      element={
-        <ProtectedRoute>
-          <Home />
-        </ProtectedRoute>
-      }
-    />
+    <Route path="/" element={<Login />} />
+    <Route element={<ProtectedRoute />}>
+      <Route path="/home" element={<Home />} />
+    </Route>
   </Routes>
 );
 

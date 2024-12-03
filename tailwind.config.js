@@ -88,7 +88,11 @@ export default {
         "tint-03": "#FBF9FF",
       },
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        sidebar: "0px 4px 24px 0px rgba(126, 101, 198, 0.2)", // Converted #7E65C633 to rgba
+      },
+    },
   },
   plugins: [],
 };

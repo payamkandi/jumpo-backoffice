@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router";
+import { useAuthStore } from "../../store/authStore";
 import { useLoginStore } from "../../store/loginStore";
 
 function LoginMainForm() {
+  const navigate = useNavigate();
   const setStep = useLoginStore((state) => state.setStep);
+  const login = useAuthStore((state) => state.login);
+
+  const handleLogin = () => {
+    login(navigate);
+  };
   const handleForgetPassword = () => {
     setStep("forgetPassword");
   };
@@ -17,7 +25,7 @@ function LoginMainForm() {
       </span>
 
       <input type="text" placeholder="عبارت امنیتی را وارد نمایید" />
-      <button> ورود</button>
+      <button onClick={handleLogin}> ورود</button>
     </div>
   );
 }

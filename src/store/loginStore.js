@@ -5,4 +5,5 @@ export const useLoginStore = create((set) => ({
   isOTPCalled: false,
   setStep: (payload) => set({ step: payload }),
   setIsOTPCalled: (payload) => set({ isOTPCalled: payload }),
+  onBack: () => set({ step: "login" }),
 }));
