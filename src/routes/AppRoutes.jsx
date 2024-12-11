@@ -1,8 +1,8 @@
-import Layout from "../components/layout/Layout";
-import Login from "../pages/Login/Login";
+import Layout from "@/components/layout/Layout";
+import { menuItems } from "@/constants/menus";
+import Login from "@/pages/Login/Login";
+import { useAuthStore } from "@/store/authStore";
 import { Navigate, Outlet, Route, Routes } from "react-router";
-import { useAuthStore } from "../store/authStore";
-import Home from "../pages/Home";
 
 const ProtectedRoute = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -19,7 +19,9 @@ const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Login />} />
     <Route element={<ProtectedRoute />}>
-      <Route path="/home" element={<Home />} />
+      {menuItems.map((item) => (
+        <Route key={item.path} path={"/" + item.path} element={<item.page />} />
+      ))}
     </Route>
   </Routes>
 );

@@ -1,17 +1,17 @@
-import { Home, Profile2User } from "iconsax-react";
+import { menuItems } from "@/constants/menus";
 import MenuRow from "./MenuRow";
 
 function Menu() {
   return (
     <div className="mt-8">
-      <MenuRow icon={<Home />} title="صفحه اصلی" onClick={() => {}} />
-      <MenuRow
-        icon={<Profile2User />}
-        title="مدیریت مشتریان"
-        onClick={() => {}}
-      />
-      <MenuRow icon={<Home />} title="صفحه اصلی" onClick={() => {}} />
-      <MenuRow icon={<Home />} title="صفحه اصلی" onClick={() => {}} />
+      {menuItems.map((item) => (
+        <MenuRow
+          icon={<item.icon />}
+          title={item.title}
+          path={item.path}
+          key={item.title}
+        />
+      ))}
     </div>
   );
 }

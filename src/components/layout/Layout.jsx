@@ -2,9 +2,11 @@ import Sidebar from "./sidebar/Sidebar";
 
 function Layout({ children }) {
   return (
-    <div className="flex">
+    <div className="flex h-full w-full">
       <Sidebar />
-      {children}
+      <div className="w-full overflow-x-hidden bg-[#F9FAFA] p-6">
+        {children}
+      </div>
     </div>
   );
 }

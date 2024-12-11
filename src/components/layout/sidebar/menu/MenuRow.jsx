@@ -1,9 +1,19 @@
-function MenuRow({ icon, title, onClick }) {
+import cx from "classnames";
+import { NavLink } from "react-router";
+
+function MenuRow({ icon, title, path }) {
   return (
-    <div className="flex w-full items-center gap-2 px-2 py-3" onClick={onClick}>
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        cx("flex w-fit items-center gap-2 px-2 py-3 hover:cursor-pointer", {
+          "text-[#735cb4]": isActive,
+        })
+      }
+    >
       {icon}
       <span>{title}</span>
-    </div>
+    </NavLink>
   );
 }
 

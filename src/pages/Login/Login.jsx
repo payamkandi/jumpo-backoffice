@@ -1,6 +1,6 @@
-import { useLoginStore } from "../../store/loginStore";
-import LoginForgetPassword from "./LoginForgetPassword";
+import { useLoginStore } from "@/store/loginStore";
 import LoginMainForm from "./LoginMainForm";
+import LoginForgetPassword from "./LoginForgetPassword";
 
 function Login() {
   const step = useLoginStore((state) => state.step);

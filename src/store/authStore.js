@@ -1,4 +1,3 @@
-// src/store/authStore.js
 import { create } from "zustand";
 
 export const useAuthStore = create((set) => ({
@@ -6,7 +5,7 @@ export const useAuthStore = create((set) => ({
   userInfo: null,
   login: (navigate) => {
     set({ isAuthenticated: true });
-    navigate("/home");
+    navigate("/manage-users");
   },
   logout: () => set({ isAuthenticated: false, userInfo: null }),
 }));
