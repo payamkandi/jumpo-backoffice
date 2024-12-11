@@ -1,9 +1,6 @@
-import { useLoginStore } from "../../store/loginStore";
-
-function LoginForgetPasswordGetPhoneNumber() {
-  const setIsOTPCalled = useLoginStore((state) => state.setIsOTPCalled);
+function LoginForgetPasswordGetPhoneNumber({ nextStep }) {
   const handleSendOTP = () => {
-    setIsOTPCalled(true);
+    nextStep();
   };
   return (
     <>
