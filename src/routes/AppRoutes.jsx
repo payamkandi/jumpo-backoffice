@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { menuItems } from "@/constants/menus";
-import Login from "@/pages/Login/Login";
+import Login from "@/pages/login/Login";
 import { useAuthStore } from "@/store/authStore";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 
