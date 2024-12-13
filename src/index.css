@@ -7,6 +7,27 @@
   height: 100dvh;
   margin: auto;
 }
+html {
+  font-family: "Yekan"; /* This uses the default Tailwind `font-sans` key */
+}
+@font-face {
+  font-family: "Yekan";
+  src: url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.eot"); /* IE9 Compat Modes */
+  src:
+    url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.woff2")
+      format("woff2"),
+    /* Modern Browsers */
+      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
 
 @layer utilities {
   .login-gradient {
