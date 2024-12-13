@@ -1,3 +1,5 @@
+import Button from "@/components/UI/Button/Button";
+
 function LoginForgetPasswordGetPhoneNumber({ nextStep }) {
   const handleSendOTP = () => {
     nextStep();
@@ -9,7 +11,9 @@ function LoginForgetPasswordGetPhoneNumber({ nextStep }) {
         نمایید.
       </p>
       <input type="text" className="mb-14" placeholder="شماره همراه" />
-      <button onClick={handleSendOTP}>ورود</button>
+      <Button onClick={handleSendOTP} fill={true}>
+        دریافت کد یکبار مصرف
+      </Button>
     </>
   );
 }

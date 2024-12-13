@@ -1,6 +1,6 @@
 import { tv } from "tailwind-variants";
 const button = tv({
-  base: "flex font-semibold w-full items-center justify-center rounded-full gap-2",
+  base: "flex font-semibold w-full items-center mx-auto justify-center rounded-full gap-2",
   variants: {
     color: {
       green: "bg-primary-100 text-primary-shade-05",

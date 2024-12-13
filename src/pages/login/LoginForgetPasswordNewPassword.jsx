@@ -1,3 +1,5 @@
+import Button from "@/components/UI/Button/Button";
+
 function LoginForgetPasswordNewPassword() {
   return (
     <>
@@ -13,9 +15,8 @@ function LoginForgetPasswordNewPassword() {
           عدد انگلیسی باشد.
         </p>
       </div>
-      <button className="mt-14 rounded-full bg-secondary-shade-80 text-white">
-        تغییر رمز
-      </button>
+
+      <Button fill>تغییر رمز</Button>
     </>
   );
 }

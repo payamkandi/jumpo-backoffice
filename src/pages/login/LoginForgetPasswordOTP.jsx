@@ -1,5 +1,6 @@
 import { useState } from "react";
 import OTP from "../../components/ui/otp/OTP";
+import Button from "@/components/UI/Button/Button";
 
 function LoginForgetPasswordOTP({ nextStep }) {
   const [otp, setOtp] = useState("");
@@ -21,9 +22,10 @@ function LoginForgetPasswordOTP({ nextStep }) {
       <button
         className="mt-14 rounded-full bg-secondary-shade-80 text-white"
         onClick={handleNextStep}
-      >
-        ورود
-      </button>
+      ></button>
+      <Button onClick={handleNextStep} fill>
+        ادامه
+      </Button>
     </>
   );
 }

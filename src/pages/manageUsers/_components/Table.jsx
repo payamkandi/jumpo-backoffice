@@ -4,6 +4,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { Eye, ShoppingCart, Wallet2 } from "iconsax-react";
 import { useState } from "react";
 
 const columnHelper = createColumnHelper();
@@ -39,8 +40,9 @@ const columns = [
     header: "عملیات",
     cell: () => (
       <div className="flex gap-2">
-        <button className="text-purple-500">🛒</button>
-        <button className="text-purple-500">📄</button>
+        <Wallet2 size={20} />
+        <ShoppingCart size={20} />
+        <Eye size={20} />
       </div>
     ),
   }),
@@ -70,10 +72,6 @@ const columns = [
   }),
   columnHelper.accessor("contactNumber", {
     header: "شماره تماس",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("customerId", {
-    header: "شناسه مشتری",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("rowNumber", {
