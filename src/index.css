@@ -8,27 +8,80 @@
   margin: auto;
 }
 html {
-  font-family: "Yekan"; /* This uses the default Tailwind `font-sans` key */
-}
-@font-face {
-  font-family: "Yekan";
-  src: url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.eot"); /* IE9 Compat Modes */
-  src:
-    url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.woff2")
-      format("woff2"),
-    /* Modern Browsers */
-      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("/src/assets/fonts/e1d06869ee86ac98052a5a1788122235.ttf")
-      format("truetype"); /* Safari, Android, iOS */
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Yekan Bakh FaNum"; /* This uses the default Tailwind `font-sans` key */
 }
 
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 100;
+  src:
+    url("assets/fonts/woff/YekanBakhFaNum-thin.woff") format("woff"),
+    url("assets/fonts/woff2/YekanBakhFaNum-thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("assets/fonts/woff/YekanBakhFaNum-Light.woff") format("woff"),
+    url("assets/fonts/woff2/YekanBakhFaNum-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("assets/fonts/woff/YekanBakhFaNum-Regular.woff") format("woff"),
+    url("assets/fonts/woff2/YekanBakhFaNum-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url("assets/fonts/woff/YekanBakhFaNum-SemiBold.woff") format("woff"),
+    url("assets/fonts/woff2/YekanBakhFaNum-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url("assets/fonts/woff/YekanBakhFaNum-Bold.woff") format("woff"),
+    url("assets/fonts/woff2/YekanBakhFaNum-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url("assets/fonts/woff/Yekan Bakh FaNum-ExtraBold.woff") format("woff"),
+    url("assets/fonts/woff2/Yekan Bakh FaNum-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url("assets/fonts/woff/Yekan Bakh FaNum-Black.woff") format("woff"),
+    url("assets/fonts/woff2/Yekan Bakh FaNum-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  font-style: normal;
+  font-weight: 950;
+  src:
+    url("assets/fonts/woff/Yekan Bakh FaNum-ExtraBlack.woff") format("woff"),
+    url("assets/fonts/woff2/Yekan Bakh FaNum-ExtraBlack.woff2") format("woff2");
+}
 @layer utilities {
   .login-gradient {
     @apply rounded-lg;
@@ -51,7 +104,7 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(224, 231, 235, .5);
+  background: rgba(224, 231, 235, 0.5);
 }
 
 /* Handle */

@@ -7,7 +7,7 @@ function PurchaseHistoriesSection({ id }) {
   const user = users.find((user) => user.contactNumber === id);
   return (
     <>
-      <div className="flex gap-8">
+      <div className="flex flex-col sm:flex-row sm:gap-8">
         <div className="w-full">
           <span className="text-sm font-normal text-[#415762]">
             شناسه مشتری :

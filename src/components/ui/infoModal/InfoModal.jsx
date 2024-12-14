@@ -14,7 +14,7 @@ function InfoModal({ data, title, isOpen, toggle }) {
           {title && <span className="text-lg font-semibold">{title}</span>}
           <CloseSquare size={24} onClick={toggle} className="cursor-pointer" />
         </div>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-4 rounded-2xl bg-[#F2F0F9] px-6 py-4">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-4 rounded-2xl bg-[#F2F0F9] px-6 py-4 sm:grid-cols-2">
           {mappedData &&
             mappedData.map((item, index) => (
               <div key={index}>
