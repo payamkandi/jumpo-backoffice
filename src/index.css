@@ -43,3 +43,24 @@ html {
       url("/login.png");
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(224, 231, 235, .5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgba(126, 101, 198, 1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 101, 198, 0.8);
+}

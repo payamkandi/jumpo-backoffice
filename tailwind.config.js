@@ -93,7 +93,7 @@ export default {
         Yekan: ["Yekan", "sans-serif"],
       },
       boxShadow: {
-        sidebar: "0px 4px 24px 0px rgba(126, 101, 198, 0.2)", // Converted #7E65C633 to rgba
+        sidebar: "0px 4px 24px 0px rgba(126, 101, 198, 0.1)", // Converted #7E65C633 to rgba
       },
     },
   },
