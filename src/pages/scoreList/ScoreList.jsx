@@ -6,7 +6,7 @@ function ScoreList() {
       <div className="mb-6">
         <span>مدیریت مشتریان</span>
       </div>
-      <Table />
+      {/* <Table /> */}
     </div>
   );
 }

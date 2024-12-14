@@ -7,7 +7,7 @@ function Login() {
   return (
     <div className="flex h-full items-center justify-center px-1 py-2">
       <div className="w-1/2">
-        <div className="flex items-center justify-center">
+        <div className="mx-auto flex max-w-[424px] items-center justify-center">
           {step === "login" && <LoginMainForm />}
           {step === "forgetPassword" && <LoginForgetPassword />}
         </div>

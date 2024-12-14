@@ -6,45 +6,14 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { Eye, ShoppingCart, Wallet2 } from "iconsax-react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router";
 
 const columnHelper = createColumnHelper();
 
-const defaultData = [
-  {
-    rowNumber: 1,
-    customerId: "546795",
-    contactNumber: "09909416143",
-    name: null,
-    nationalId: "4271028585",
-    birthDate: "1370/02/02",
-    familyName: null,
-    gender: "مرد",
-    registrationType: "حضوری",
-    walletCredit: "۵,۰۰۰,۰۰۰ ریال",
-    email: "idean.modarres89@gmail.com", 
-
-    cardId: "1234654697",
-  },
-  {
-    rowNumber: 2,
-    customerId: "546795",
-    contactNumber: "09330760206",
-    nationalId: "4271028585",
-    name: "آیدین",
-    familyName: "مدرس اول",
-    birthDate: "1370/02/02",
-    gender: "مرد",
-    registrationType: "وب سایت",
-    walletCredit: "۵,۰۰۰,۰۰۰ ریال",
-    email: "idean.modarres89@gmail.com",
-    cardId: "1234654697",
-  },
-];
-
-function Table() {
+function Table({ data }) {
   const { setUserInfo, setInfoModal } = useContext(manageUserContext);
-
+  const navigate = useNavigate();
   const columns = [
     columnHelper.accessor("actions", {
       header: "عملیات",
@@ -54,7 +23,13 @@ function Table() {
             <Wallet2 size={20} color="#7E65C6" />
           </div>
           <div className="cursor-pointer">
-            <ShoppingCart size={20} color="#7E65C6" />
+            <ShoppingCart
+              size={20}
+              color="#7E65C6"
+              onClick={() =>
+                openUserPurchaseHistoryHandler(info.row.original.contactNumber)
+              }
+            />
           </div>
           <div
             className="cursor-pointer"
@@ -101,7 +76,6 @@ function Table() {
     }),
   ].reverse();
 
-  const [data, _setData] = useState([...defaultData]);
   const table = useReactTable({
     data,
     columns,
@@ -112,6 +86,9 @@ function Table() {
     const userData = data.find((user) => user.contactNumber === id);
     setUserInfo(userData);
     setInfoModal(true);
+  };
+  const openUserPurchaseHistoryHandler = (id) => {
+    navigate(`/manage-users/purchase-history/${id}`);
   };
 
   return (

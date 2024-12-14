@@ -2,7 +2,7 @@ import Branches from "@/pages/branches/Branches";
 import DiscountCodes from "@/pages/discountCodes/DiscountCodes";
 import GiftCardList from "@/pages/giftCardList/GiftCardList";
 import GiftCards from "@/pages/giftCards/GiftCards";
-import ManageUsers from "@/pages/manageUsers/manageUsers";
+import ManageUsers from "@/pages/manageUsers/ManageUsers";
 import ScoreList from "@/pages/scoreList/ScoreList";
 import Tickets from "@/pages/tickets/Tickets";
 import {
