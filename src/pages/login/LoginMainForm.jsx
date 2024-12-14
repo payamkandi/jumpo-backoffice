@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
 import { useAuthStore } from "../../store/authStore";
 import { useLoginStore } from "../../store/loginStore";
-import Button from "@/components/UI/Button/Button";
 import { LoginCurve } from "iconsax-react";
+import Button from "@/components/ui/Button/Button";
 
 function LoginMainForm() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function LoginMainForm() {
       </div>
       <span className="hover:cursor-pointer" onClick={handleForgetPassword}>
         فراموشی رمز عبور
-      </span> 
+      </span>
 
       <input type="text" placeholder="عبارت امنیتی را وارد نمایید" />
       <Button onClick={handleLogin} icon={<LoginCurve />} fill={true}>
