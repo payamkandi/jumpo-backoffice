@@ -1,6 +1,6 @@
 import { useState } from "react";
-import OTP from "../../components/ui/otp/OTP";
-import Button from "@/components/ui/Button/Button";
+import OTP from "../../../components/ui/otp/OTP";
+import Button from "@/components/ui/button/Button";
 
 function LoginForgetPasswordOTP({ nextStep }) {
   const [otp, setOtp] = useState("");

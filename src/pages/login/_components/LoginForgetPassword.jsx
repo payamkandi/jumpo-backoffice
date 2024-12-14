@@ -1,8 +1,8 @@
 import { ArrowRight } from "iconsax-react";
-import { useLoginStore } from "../../store/loginStore";
+import { useLoginStore } from "../../../store/loginStore";
+import { useState } from "react";
 import LoginForgetPasswordGetPhoneNumber from "./LoginForgetPasswordGetPhoneNumber";
 import LoginForgetPasswordOTP from "./LoginForgetPasswordOTP";
-import { useState } from "react";
 import LoginForgetPasswordNewPassword from "./LoginForgetPasswordNewPassword";
 function LoginForgetPassword() {
   const [step, setStep] = useState(1);

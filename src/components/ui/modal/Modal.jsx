@@ -1,6 +1,5 @@
 import ReactModal from "react-modal";
 import "./Modal.css";
-import { CloseSquare } from "iconsax-react";
 const Modal = ({ modal, toggle, closeOverClick = true, children }) => {
   return (
     <ReactModal
@@ -12,11 +11,6 @@ const Modal = ({ modal, toggle, closeOverClick = true, children }) => {
       overlayClassName="overlay"
       className="modal"
     >
-      <CloseSquare
-        size={24}
-        onClick={toggle}
-        className="absolute left-4 top-4 cursor-pointer"
-      />
       {children}
     </ReactModal>
   );

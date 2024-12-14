@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router";
-import { useAuthStore } from "../../store/authStore";
-import { useLoginStore } from "../../store/loginStore";
+import { useAuthStore } from "../../../store/authStore";
+import { useLoginStore } from "../../../store/loginStore";
 import { LoginCurve } from "iconsax-react";
-import Button from "@/components/ui/Button/Button";
+import Button from "@/components/ui/button/Button";
 
 function LoginMainForm() {
   const navigate = useNavigate();
