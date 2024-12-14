@@ -1,6 +1,9 @@
 import { create } from "zustand";
-
-export const useUsersStore = create((set) => ({
+const initialState = {
   users: [],
+};
+export const useUsersStore = create((set) => ({
+  ...initialState,
   setUsers: (users) => set({ users }),
+  reset: () => set(initialState),
 }));

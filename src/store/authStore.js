@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import { useLayoutStore } from "./layoutStore";
+import { useUsersStore } from "./usersStore";
 
 export const useAuthStore = create((set) => ({
   isAuthenticated: false,
@@ -7,5 +9,9 @@ export const useAuthStore = create((set) => ({
     set({ isAuthenticated: true });
     navigate("/manage-users");
   },
-  logout: () => set({ isAuthenticated: false, userInfo: null }),
+  logout: () => {
+    useLayoutStore.getState().reset();
+    useUsersStore.getState().reset();
+    set({ isAuthenticated: false, userInfo: null });
+  },
 }));

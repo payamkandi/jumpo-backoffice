@@ -21,7 +21,7 @@ function Logout() {
         </div>
       </Modal>
       <div
-        className="flex w-fit cursor-pointer items-center gap-2 hover:cursor-pointer hover:text-[#735cb4]"
+        className="flex w-fit cursor-pointer items-center gap-2 px-2 py-3 hover:cursor-pointer hover:text-[#735cb4]"
         onClick={() => setModal(true)}
       >
         <LogoutCurve />

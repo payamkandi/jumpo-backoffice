@@ -100,7 +100,7 @@ function Table({ data }) {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="px-4 py-2 first:rounded-s-lg last:rounded-e-lg"
+                  className="h-12 px-4 py-3 text-sm font-semibold first:rounded-s-lg last:rounded-e-lg"
                 >
                   {header.isPlaceholder
                     ? null
@@ -117,7 +117,7 @@ function Table({ data }) {
           {table.getRowModel().rows.map((row) => (
             <tr
               key={row.id}
-              className="even:bg-gray-100 border-[#f2f0f9] text-[#415762] odd:bg-white [&:not(:last-child)]:border-b"
+              className="even:bg-gray-100 h-[55px] border-[#f2f0f9] text-sm text-[#415762] odd:bg-white [&:not(:last-child)]:border-b"
             >
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id} className="px-2 py-4">

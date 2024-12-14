@@ -63,7 +63,7 @@ function ManageUsers() {
       />
       <div className="rounded-2xl border border-[#F2F0F9] bg-white p-6">
         <div className="mb-6">
-          <span>مدیریت مشتریان</span>
+          <span className="text-xl font-semibold">مدیریت مشتریان</span>
         </div>
         {users.length === 0 ? (
           <span>هیچ مشتری یافت نشد</span>
