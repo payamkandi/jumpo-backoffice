@@ -22,7 +22,7 @@ const defaultData = [
     gender: "مرد",
     registrationType: "حضوری",
     walletCredit: "۵,۰۰۰,۰۰۰ ریال",
-    email: "idean.modarres89@gmail.com",
+    email: "idean.modarres89@gmail.com", 
 
     cardId: "1234654697",
   },

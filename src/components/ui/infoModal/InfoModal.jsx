@@ -21,9 +21,9 @@ function InfoModal({ data, title, isOpen, toggle }) {
                 <span className="text-sm font-normal text-[#415762]">
                   <bdi>{item.title}</bdi>
                 </span>
-
+                {" : "}
                 <span className="font-base text-sm text-[#1D262B]">
-                  {" : " + item.value}
+                  {item.value}
                 </span>
               </div>
             ))}
