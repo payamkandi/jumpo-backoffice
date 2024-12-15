@@ -6,6 +6,7 @@ import ManageUserContext, {
 import { userInfoMapper } from "@/utils/utils";
 import { useUsersStore } from "@/store/usersStore";
 import UsersTable from "../scoreList/_components/Table";
+import PageWrapper from "@/components/layout/PageWrapper";
 
 const defaultData = [
   {
@@ -61,16 +62,13 @@ function ManageUsers() {
         isOpen={infoModal}
         toggle={closeInfoModalHandler}
       />
-      <div className="rounded-2xl border border-[#F2F0F9] bg-white p-3 sm:p-6">
-        <div className="mb-6 text-center sm:text-start">
-          <span className="text-xl font-semibold">مدیریت مشتریان</span>
-        </div>
+      <PageWrapper title="مدیریت مشتریان">
         {users.length === 0 ? (
           <span>هیچ مشتری یافت نشد</span>
         ) : (
           <UsersTable data={users} />
         )}
-      </div>
+      </PageWrapper>
     </>
   );
 }
