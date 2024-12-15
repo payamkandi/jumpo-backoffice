@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import cx from "classnames";
 const button = tv({
   base: "flex font-semibold w-full items-center mx-auto justify-center rounded-full gap-2",
   variants: {
@@ -26,6 +27,7 @@ const button = tv({
 
 function Button({
   color = "purple",
+  className,
   children,
   size = 48,
   icon,
@@ -33,7 +35,10 @@ function Button({
   onClick,
 }) {
   return (
-    <button className={button({ color, size, fill })} onClick={onClick}>
+    <button
+      className={cx(className, button({ color, size, fill }))}
+      onClick={onClick}
+    >
       {icon}
       {children}
     </button>

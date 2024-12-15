@@ -22,7 +22,7 @@ function LoginMainForm() {
     setStep("forgetPassword");
   };
   return (
-    <div className="flex w-full flex-col p-4">
+    <div className="flex w-full max-w-[424px] flex-col p-4">
       <div className="flex flex-col">
         <h1 className="mb-6 text-xl font-semibold">ورود</h1>
         <TextBox
@@ -36,15 +36,15 @@ function LoginMainForm() {
           id="password"
           value={password}
           isPassword={true}
-          autoComplete="password"
           type="password"
+          autoComplete="password"
           onChange={(e) => setPassword(e.target.value)}
           label="رمز عبور خود را وارد نمایید"
           height={80}
         />
       </div>
       <span
-        className="mb-6 mt-3 cursor-pointer text-sm font-normal text-[#735CB4]"
+        className="mb-6 mt-3 w-fit cursor-pointer text-sm font-normal text-[#735CB4]"
         onClick={handleForgetPassword}
       >
         فراموشی رمز عبور
