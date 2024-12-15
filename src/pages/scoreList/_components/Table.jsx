@@ -1,7 +1,7 @@
+import Table from "@/components/ui/table/Table";
 import manageUserContext from "@/contexts/manageUserContext";
 import {
   createColumnHelper,
-  flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router";
 
 const columnHelper = createColumnHelper();
 
-function Table({ data }) {
+function UsersTable({ data }) {
   const { setUserInfo, setInfoModal } = useContext(manageUserContext);
   const navigate = useNavigate();
   const columns = [
@@ -20,7 +20,13 @@ function Table({ data }) {
       cell: (info) => (
         <div className="flex gap-2">
           <div className="cursor-pointer">
-            <Wallet2 size={20} color="#7E65C6" />
+            <Wallet2
+              size={20}
+              color="#7E65C6"
+              onClick={() => {
+                openWalletHistoryHandler(info.row.original.contactNumber);
+              }}
+            />
           </div>
           <div className="cursor-pointer">
             <ShoppingCart
@@ -91,45 +97,11 @@ function Table({ data }) {
     navigate(`/manage-users/purchase-history/${id}`);
   };
 
-  return (
-    <div className="overflow-y-auto">
-      <table className="w-full table-auto border-collapse text-center">
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className="bg-[#D7CFED]">
-              {headerGroup.headers.map((header) => (
-                <th
-                  key={header.id}
-                  className="h-12 px-4 py-3 text-sm font-semibold first:rounded-s-lg last:rounded-e-lg"
-                >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr
-              key={row.id}
-              className="even:bg-gray-100 h-[55px] border-[#f2f0f9] text-sm text-[#415762] odd:bg-white [&:not(:last-child)]:border-b"
-            >
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className="px-2 py-4">
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+  const openWalletHistoryHandler = (id) => {
+    navigate(`/manage-users/wallet-history/${id}`);
+  };
+
+  return <Table table={table} />;
 }
 
-export default Table;
+export default UsersTable;

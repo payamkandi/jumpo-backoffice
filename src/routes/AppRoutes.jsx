@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import { useAuthStore } from "@/store/authStore";
+import WalletHistory from "@/pages/manageUsers/WalletHistory";
 
 const Layout = lazy(() => import("@/components/layout/Layout"));
 const Branches = lazy(() => import("@/pages/branches/Branches"));
@@ -36,6 +37,7 @@ const AppRoutes = () => (
         <Route path="/manage-users">
           <Route index element={<ManageUsersWithProvider />} />
           <Route path="purchase-history/:id" element={<PurchaseHistory />} />
+          <Route path="wallet-history/:id" element={<WalletHistory />} />
         </Route>
         <Route path="/gift-cards" element={<GiftCards />} />
         <Route path="/tickets" element={<Tickets />} />

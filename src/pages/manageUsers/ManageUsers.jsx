@@ -1,11 +1,11 @@
 import InfoModal from "@/components/ui/infoModal/InfoModal";
-import Table from "../scoreList/_components/Table";
 import { useContext, useEffect } from "react";
 import ManageUserContext, {
   ManageUserProvider,
 } from "@/contexts/manageUserContext";
 import { userInfoMapper } from "@/utils/utils";
 import { useUsersStore } from "@/store/usersStore";
+import UsersTable from "../scoreList/_components/Table";
 
 const defaultData = [
   {
@@ -61,14 +61,14 @@ function ManageUsers() {
         isOpen={infoModal}
         toggle={closeInfoModalHandler}
       />
-      <div className="rounded-2xl border border-[#F2F0F9] bg-white p-6">
+      <div className="rounded-2xl border border-[#F2F0F9] bg-white p-3 sm:p-6">
         <div className="mb-6">
           <span className="text-xl font-semibold">مدیریت مشتریان</span>
         </div>
         {users.length === 0 ? (
           <span>هیچ مشتری یافت نشد</span>
         ) : (
-          <Table data={users} />
+          <UsersTable data={users} />
         )}
       </div>
     </>
