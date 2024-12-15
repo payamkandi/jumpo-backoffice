@@ -62,7 +62,7 @@ function ManageUsers() {
         toggle={closeInfoModalHandler}
       />
       <div className="rounded-2xl border border-[#F2F0F9] bg-white p-3 sm:p-6">
-        <div className="mb-6">
+        <div className="mb-6 text-center sm:text-start">
           <span className="text-xl font-semibold">مدیریت مشتریان</span>
         </div>
         {users.length === 0 ? (

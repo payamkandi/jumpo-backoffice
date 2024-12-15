@@ -6,7 +6,7 @@ function Layout({ children }) {
     <div className="relative flex h-full w-full">
       <ToggleSideBar />
       <Sidebar />
-      <div className="w-full overflow-x-hidden bg-[#F9FAFA] p-6">
+      <div className="w-full overflow-x-hidden bg-[#F9FAFA] p-3 sm:p-6">
         {children}
       </div>
     </div>
