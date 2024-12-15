@@ -84,7 +84,7 @@ html {
 }
 @layer utilities {
   .login-gradient {
-    @apply rounded-lg;
+  
     background-size: cover;
     background-position: center;
     background-blend-mode: hard-light;

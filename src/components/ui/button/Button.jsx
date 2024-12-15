@@ -13,7 +13,7 @@ const button = tv({
       64: "py-[10px] px-6 h-16 text-sm",
     },
     fill: {
-      true: "sm:w-fit",
+      true: "w-full",
       false: "w-fit",
       large: "w-[240px]",
     },

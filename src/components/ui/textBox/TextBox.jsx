@@ -1,6 +1,5 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import Classes from "./TextBox.module.scss";
-import Button from "components/button/Button";
 import {
   CloseCircle,
   Danger,
@@ -110,9 +109,16 @@ const TextBox = forwardRef((props, ref) => {
               {
                 props.isPassword &&
                   (isPassword ? (
-                    <Eye size={24} onClick={() => setIsPassword(!isPassword)} />
+                    <Eye
+                      className="cursor-pointer"
+                      color="#54707D"
+                      size={24}
+                      onClick={() => setIsPassword(!isPassword)}
+                    />
                   ) : (
                     <EyeSlash
+                      className="cursor-pointer"
+                      color="#54707D"
                       size={24}
                       onClick={() => setIsPassword(!isPassword)}
                     />
@@ -152,7 +158,7 @@ const TextBox = forwardRef((props, ref) => {
                 />
               )}
             </div>
-            <div className={Classes["btn-box"]} ref={btnboxRef}>
+            {/* <div className={Classes["btn-box"]} ref={btnboxRef}>
               <Button
                 variant="primary"
                 isLoading={props.isLoading}
@@ -172,7 +178,7 @@ const TextBox = forwardRef((props, ref) => {
               >
                 {props.btn}
               </Button>
-            </div>
+            </div> */}
           </>
         )}
         <label htmlFor={props.id}>{props.label}</label>
