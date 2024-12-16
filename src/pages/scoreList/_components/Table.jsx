@@ -18,7 +18,7 @@ function UsersTable({ data }) {
     columnHelper.accessor("actions", {
       header: "عملیات",
       cell: (info) => (
-        <div className="flex gap-2">
+        <div className="flex items-center justify-center gap-2">
           <div className="cursor-pointer">
             <Wallet2
               size={20}

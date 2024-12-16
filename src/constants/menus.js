@@ -1,7 +1,7 @@
 import Branches from "@/pages/branches/Branches";
 import DiscountCodes from "@/pages/discountCodes/DiscountCodes";
 import GiftCardList from "@/pages/giftCardList/GiftCardList";
-import GiftCards from "@/pages/giftCards/GiftCards";
+import GiftCards from "@/pages/manageGiftCards/ManageGiftCards";
 import ManageUsers from "@/pages/manageUsers/ManageUsers";
 import ScoreList from "@/pages/scoreList/ScoreList";
 import Tickets from "@/pages/tickets/Tickets";
@@ -10,8 +10,8 @@ import {
   ElementPlus,
   I3Square,
   LinkSquare,
-  Money,
   Profile2User,
+  Rank,
 } from "iconsax-react";
 
 export const menuItems = [
@@ -22,9 +22,9 @@ export const menuItems = [
     page: ManageUsers,
   },
   {
-    icon: Money,
-    title: "فروش کارت هدیه",
-    path: "gift-cards",
+    icon: Rank,
+    title: "مدیریت کارت هدیه",
+    path: "manage-gift-cards",
     page: GiftCards,
   },
   { icon: Chart, title: "لیست فروش بلیت", path: "tickets", page: Tickets },

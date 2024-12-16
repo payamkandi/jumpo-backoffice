@@ -1,13 +1,5 @@
 import C from "./Switch.module.scss";
 
-// type SwitchProps = {
-//   size?: "small" | "medium", // "size" can only be "small" or "medium"
-//   iconType?: 1 | 2 | 3, // "iconType" can only be 1, 2, or 3
-//   checked: boolean, // "checked" is a boolean
-//   onChange?: (checked: boolean) => void, // "onChange" is a function
-//   disabled?: boolean, // "disabled" is a boolean
-// };
-
 function Switch({
   size = "medium",
   iconType = 1,

@@ -58,7 +58,7 @@ const TextBox = forwardRef((props, ref) => {
       style={props.Style}
       className={`${props.className} ${Classes[props.className]} ${props.withLogo && Classes["with-logo"]} ${entered && Classes["entered"]} ${
         Classes["container"]
-      } ${props.error && Classes["error-border"]} ${props.ltr && Classes["ltr"]} ${props.height == 80 ? Classes["size80"] : Classes["size64"]} ${
+      } ${props.error && Classes["error-border"]} ${props.ltr && Classes["ltr"]} ${props.height == 64 ? Classes["size64"] : Classes["size80"]} ${
         (props.ltr && props.onClear && props.value) || props.isPassword
           ? Classes["ltr-with-icons"]
           : ""

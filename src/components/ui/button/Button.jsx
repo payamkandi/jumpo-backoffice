@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 import cx from "classnames";
 const button = tv({
-  base: "flex font-semibold w-full items-center mx-auto justify-center rounded-full gap-2",
+  base: "flex cursor-pointer font-semibold w-full items-center mx-auto justify-center rounded-full gap-2",
   variants: {
     color: {
       green: "bg-primary-100 text-primary-shade-05",

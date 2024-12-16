@@ -11,3 +11,19 @@ export const userInfoMapper = (user) => {
     "شناسه کارت": user?.cardId,
   };
 };
+
+export const cardInfoMapper = (card) => {
+  return {
+    "کد شناسه مشتری": card?.customerId,
+    "تاریخ خرید": card?.purchaseDate,
+    "نام کارت": card?.cardName,
+    "تاریخ انقضا": card?.expDate,
+    "کد کارت": card?.cardCode,
+    "آدرس ایمیل ارسالی": card?.email,
+    "نام و نام خانوادگی": card?.name + " " + card?.familyName,
+    "شناسه کارت": card?.cardId,
+    "مبلغ کارت": card?.amount,
+    "تاریخ ثبت کد": card?.dateOfRegistration,
+    وضعیت: card?.status,
+  };
+};

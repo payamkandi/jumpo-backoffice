@@ -7,7 +7,12 @@ const Layout = lazy(() => import("@/components/layout/Layout"));
 const Branches = lazy(() => import("@/pages/branches/Branches"));
 const DiscountCodes = lazy(() => import("@/pages/discountCodes/DiscountCodes"));
 const GiftCardList = lazy(() => import("@/pages/giftCardList/GiftCardList"));
-const GiftCards = lazy(() => import("@/pages/giftCards/GiftCards"));
+const CreateGiftCard = lazy(
+  () => import("@/pages/manageGiftCards/CreateGiftCard"),
+);
+const ManageGiftCards = lazy(
+  () => import("@/pages/manageGiftCards/ManageGiftCards"),
+);
 const Login = lazy(() => import("@/pages/login/Login"));
 const ManageUsersWithProvider = lazy(
   () => import("@/pages/manageUsers/ManageUsers"),
@@ -39,7 +44,10 @@ const AppRoutes = () => (
           <Route path="purchase-history/:id" element={<PurchaseHistory />} />
           <Route path="wallet-history/:id" element={<WalletHistory />} />
         </Route>
-        <Route path="/gift-cards" element={<GiftCards />} />
+        <Route path="/manage-gift-cards">
+          <Route index element={<ManageGiftCards />} />
+          <Route path="create-gift-card" element={<CreateGiftCard />} />
+        </Route>
         <Route path="/tickets" element={<Tickets />} />
         <Route path="/gift-card-list" element={<GiftCardList />} />
         <Route path="/discount-codes" element={<DiscountCodes />} />
