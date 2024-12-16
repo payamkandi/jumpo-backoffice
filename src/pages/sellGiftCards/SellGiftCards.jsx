@@ -1,15 +1,13 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
-import { useCardsStore } from "@/store/cardsStore";
-import { useEffect } from "react";
-import CardsTable from "./_componenets/CardsTable";
-import { useNavigate } from "react-router";
-import { ManageCardsProvider } from "@/contexts/manageCardsContext";
 import InfoModal from "@/components/ui/infoModal/InfoModal";
-import ManageCardsContext from "@/contexts/manageCardsContext";
+import SellGiftCardsContext, {
+  SellGiftCardsProvider,
+} from "@/contexts/sellGiftCardsContext";
 import { cardInfoMapper } from "@/utils/utils";
-import { useContext } from "react";
-import DeleteCardModal from "./_componenets/DeleteCardModal";
+import { useContext, useEffect } from "react";
+import SellGiftCardsTable from "./_components/SellGiftCardsTable";
+import { useCardsStore } from "@/store/cardsStore";
+
 const defaultData = [
   {
     rowNumber: 1,
@@ -17,8 +15,7 @@ const defaultData = [
     purchaseDate: "1403/08/09",
     expDate: "1404/05/05",
     cardCode: "*******",
-    name: "آیدین",
-    familyName: "مدرس اول",
+    nameAndFamily: "آیدین مدرس اول",
     dateOfRegistration: "14038/08/09",
     email: "idean.modarres89@gmail.com",
     status: "استفاده شده",
@@ -33,8 +30,7 @@ const defaultData = [
     purchaseDate: "1403/08/09",
     expDate: "1404/05/05",
     cardCode: "*******",
-    name: "آیدین",
-    familyName: "مدرس اول",
+    nameAndFamily: "آیدین مدرس اول",
     dateOfRegistration: "14038/08/09",
     email: "idean.modarres89@gmail.com",
     status: "منقضی",
@@ -49,8 +45,7 @@ const defaultData = [
     purchaseDate: "1403/08/09",
     expDate: "1404/05/05",
     cardCode: "*******",
-    name: "آیدین",
-    familyName: "مدرس اول",
+    nameAndFamily: "آیدین مدرس اول",
     dateOfRegistration: "14038/08/09",
     email: "idean.modarres89@gmail.com",
     status: "استفاده نشده",
@@ -61,43 +56,31 @@ const defaultData = [
   },
 ];
 
-function ManageGiftCards() {
+function SellGiftCards() {
   const setCards = useCardsStore((state) => state.setCards);
   const cards = useCardsStore((state) => state.cards);
-  const navigate = useNavigate();
-  const { cardInfo, setCardInfo, infoModal, setInfoModal } =
-    useContext(ManageCardsContext);
-  const headerLeftNodes = (
-    <div>
-      <Button onClick={() => navigate("create-gift-card")}>
-        ایجاد کارت هدیه
-      </Button>
-    </div>
-  );
-
-  const closeInfoModalHandler = () => {
-    setInfoModal(false);
-    setCardInfo(null);
+  const { cardInfo, infoModal, setInfoModal } =
+    useContext(SellGiftCardsContext);
+  const toggleInfoModalHandler = () => {
+    setInfoModal((prev) => !prev);
   };
-
   useEffect(() => {
     setCards(defaultData);
   }, [setCards]);
 
   return (
     <>
-      <DeleteCardModal />
       <InfoModal
-        title="اطلاعات مشتری"
+        title="جزئیات فروش کارت هدیه"
         data={cardInfoMapper(cardInfo)}
         isOpen={infoModal}
-        toggle={closeInfoModalHandler}
+        toggle={toggleInfoModalHandler}
       />
-      <PageWrapper title="کارت هدیه" headerLeftNodes={headerLeftNodes}>
+      <PageWrapper title="فروش کارت هدیه">
         {cards.length === 0 ? (
           <span>هیچ کارتی یافت نشد</span>
         ) : (
-          <CardsTable data={cards} />
+          <SellGiftCardsTable data={cards} />
         )}
       </PageWrapper>
     </>
@@ -106,9 +89,9 @@ function ManageGiftCards() {
 
 const ManageGiftCardsWithProviders = () => {
   return (
-    <ManageCardsProvider>
-      <ManageGiftCards />
-    </ManageCardsProvider>
+    <SellGiftCardsProvider>
+      <SellGiftCards />
+    </SellGiftCardsProvider>
   );
 };
 

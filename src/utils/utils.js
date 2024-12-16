@@ -1,7 +1,8 @@
 export const userInfoMapper = (user) => {
   return {
     کدشناسه: user?.customerId,
-    "نام و نام خانوادگی": user?.name + " " + user?.familyName,
+    "نام و نام خانوادگی":
+      user?.nameAndFamily || user?.name + " " + user?.familyName,
     جنسیت: user?.gender,
     ایمیل: user?.email,
     "شماره تماس": user?.contactNumber,
@@ -20,7 +21,8 @@ export const cardInfoMapper = (card) => {
     "تاریخ انقضا": card?.expDate,
     "کد کارت": card?.cardCode,
     "آدرس ایمیل ارسالی": card?.email,
-    "نام و نام خانوادگی": card?.name + " " + card?.familyName,
+    "نام و نام خانوادگی":
+      card?.nameAndFamily || card?.name + " " + card?.familyName,
     "شناسه کارت": card?.cardId,
     "مبلغ کارت": card?.amount,
     "تاریخ ثبت کد": card?.dateOfRegistration,
