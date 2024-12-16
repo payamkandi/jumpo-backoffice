@@ -3,15 +3,15 @@ import cx from "classnames";
 import TitleValue from "@/components/ui/titleValue/TitleValue";
 function PurcahseHistoryCard() {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl bg-[#F2F0F9] px-6 py-4">
-      <div className="grid grid-cols-1 gap-y-1 sm:grid-cols-2 sm:gap-y-2 sm:px-4">
+    <div className="flex flex-col gap-2 rounded-2xl bg-[#F2F0F9] px-3 py-2 sm:gap-4 sm:px-6 sm:py-4">
+      <div className="grid grid-cols-1 gap-y-1 sm:grid-cols-2 sm:gap-y-2 px-2">
         <TitleValue title="تاریخ خرید" value="1404/06/06" />
         <TitleValue title="وضعیت" value="فعال" />
         <TitleValue title="شماره بلیت" value="345532534" />
         <TitleValue title="خرید" value="حضوری" />
       </div>
-      <div className="flex flex-col gap-8 rounded-2xl bg-white p-4">
-        <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2">
+      <div className="flex flex-col gap-8 rounded-2xl bg-white p-2 sm:p-4">
+        <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2 sm:gap-y-4">
           <BranchRow
             title="شعبه اپال"
             icon={<Location size={24} color="#735CB4" />}
@@ -39,7 +39,7 @@ function PurcahseHistoryCard() {
           />
         </div>
         <div className="grid grid-cols-1 gap-x-6 gap-y-3 border-t border-[#F2F0F9] pt-4 text-sm text-[#1D262B] sm:grid-cols-2">
-          <div className="flex flex-col items-center sm:gap-6 gap-y-3 sm:flex-row">
+          <div className="flex flex-col items-center gap-y-3 sm:flex-row sm:gap-6">
             <div className="flex w-full items-center gap-2">
               <span>در صد تخفیف:</span>
               <span>0%</span>

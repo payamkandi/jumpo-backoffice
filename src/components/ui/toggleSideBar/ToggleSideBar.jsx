@@ -6,7 +6,7 @@ function ToggleSideBar() {
   return (
     <label
       className={cx(
-        "absolute right-1 top-1 z-[11] flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-[#d7cfed] transition-all duration-500 md:hidden",
+        "absolute right-4 top-4 z-[11] flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-[#d7cfed] transition-all duration-500 md:hidden",
         {
           // "right-[180px]": sidebar,
         },
