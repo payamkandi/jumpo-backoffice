@@ -2,11 +2,10 @@ import Switch from "@/components/ui/switch/Switch";
 import Table from "@/components/ui/table/Table";
 import ManageCardsContext from "@/contexts/manageCardsContext";
 import { useCardsStore } from "@/store/cardsStore";
-import { createColumnHelper } from "@tanstack/react-table";
+import { columnHelper } from "@/utils/utils";
 import { Eye, Trash } from "iconsax-react";
 import { useContext } from "react";
 
-const columnHelper = createColumnHelper();
 
 function CardsTable({ data }) {
   const { setCardInfo, setInfoModal, setCardIdToDelete, setDeleteModal } =

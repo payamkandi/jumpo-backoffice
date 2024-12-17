@@ -1,6 +1,5 @@
 import Table from "@/components/ui/table/Table";
-import { createColumnHelper } from "@tanstack/react-table";
-const columnHelper = createColumnHelper();
+import { columnHelper } from "@/utils/utils";
 
 function WalletHistoryTable({ tableData }) {
   const columns = [

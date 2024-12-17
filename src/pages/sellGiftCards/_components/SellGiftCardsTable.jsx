@@ -1,9 +1,8 @@
 import Table from "@/components/ui/table/Table";
 import SellGiftCardsContext from "@/contexts/sellGiftCardsContext";
-import { createColumnHelper } from "@tanstack/react-table";
+import { columnHelper } from "@/utils/utils";
 import { Eye } from "iconsax-react";
 import { useContext } from "react";
-const columnHelper = createColumnHelper();
 
 function SellGiftCardsTable({ data }) {
   const { setCardInfo, setInfoModal } = useContext(SellGiftCardsContext);

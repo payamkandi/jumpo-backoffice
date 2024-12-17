@@ -1,11 +1,10 @@
 import Table from "@/components/ui/table/Table";
 import manageUserContext from "@/contexts/manageUserContext";
-import { createColumnHelper } from "@tanstack/react-table";
+import { columnHelper } from "@/utils/utils";
 import { Eye, ShoppingCart, Wallet2 } from "iconsax-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 
-const columnHelper = createColumnHelper();
 
 function UsersTable({ data }) {
   const { setUserInfo, setInfoModal } = useContext(manageUserContext);

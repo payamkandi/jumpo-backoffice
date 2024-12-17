@@ -1,3 +1,5 @@
+import { createColumnHelper } from "@tanstack/react-table";
+
 export const userInfoMapper = (user) => {
   return {
     کدشناسه: user?.customerId,
@@ -29,3 +31,22 @@ export const cardInfoMapper = (card) => {
     وضعیت: card?.status,
   };
 };
+
+export const ticketInfoMapper = (ticket) => {
+  return {
+    "شناسه بلیت": ticket?.ticketId,
+    "نام و نام خانوادگی": ticket?.fullName,
+    "نام شعبه": ticket?.branch,
+    "تاریخ خرید": ticket?.buyDate,
+    "درصد تخفیف": ticket?.discount + "%",
+    "استفاده از کیف پول": ticket?.amountOfWalletUsage,
+    "شماره موبایل": ticket?.phoneNumber,
+    "زمان بازی": ticket?.playTime,
+    "تاریخ و زمان بازی": ticket?.dateTime,
+    "تعداد نفرات": ticket?.participants,
+    "مبلغ بلیت": ticket?.ticketAmount,
+    "مبلغ پرداختی": ticket?.paidAmount,
+  };
+};
+
+export const columnHelper = createColumnHelper();
