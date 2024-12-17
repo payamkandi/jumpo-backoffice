@@ -5,7 +5,7 @@ const button = tv({
   variants: {
     color: {
       green: "bg-primary-100 text-primary-shade-05",
-      purple: "bg-secondary-shade-80 text-white",
+      purple: "bg-[#7E65C6] text-white",
     },
     size: {
       24: "py-1 px-2 h-8 text-sm",

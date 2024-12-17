@@ -49,4 +49,19 @@ export const ticketInfoMapper = (ticket) => {
   };
 };
 
+export const discountInfoMapper = (discount) => {
+  return {
+    ردیف: discount?.row,
+    "شناسه تخفیف": discount?.discountId,
+    "نام کد": discount?.codeName,
+    "کد تخفیف": discount?.discountCode,
+    "مقدار تخفیف": discount?.discountAmount,
+    "تخصیص به مشتری": discount?.customerType,
+    "تاریخ ایجاد کد": discount?.creationDate,
+    "تاریخ انقضا کد": discount?.expirationDate,
+    "وضعیت کد تخفیف": discount?.codeStatus ? "فعال" : "غیرفعال",
+    "شماره موبایل": discount?.phoneNumber || "ندارد",
+  };
+};
+
 export const columnHelper = createColumnHelper();
