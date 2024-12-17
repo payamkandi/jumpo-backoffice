@@ -9,6 +9,7 @@ import DeleteDiscountModal from "./_components/DeleteDiscountModal";
 import InfoModal from "@/components/ui/infoModal/InfoModal";
 import { useContext, useEffect } from "react";
 import { discountInfoMapper } from "@/utils/utils";
+import { useNavigate } from "react-router";
 
 const defaultData = [
   {
@@ -136,13 +137,22 @@ const defaultData = [
 function DiscountCodes() {
   const discounts = useDiscountsStore((state) => state.discounts);
   const setDiscounts = useDiscountsStore((state) => state.setDiscounts);
+  const navigate = useNavigate();
   const { discountInfo, infoModal, setInfoModal } =
     useContext(DiscountsContext);
 
   const leftNodes = (
     <div className="flex gap-4">
-      <Button>ایجاد کد تخفیف برای کاربر</Button>
-      <Button>ایجاد کد تخفیف عمومی</Button>
+      <Button
+        onClick={() => navigate("/discount-codes/create-private-discount-code")}
+      >
+        ایجاد کد تخفیف برای کاربر
+      </Button>
+      <Button
+        onClick={() => navigate("/discount-codes/create-public-discount-code")}
+      >
+        ایجاد کد تخفیف عمومی
+      </Button>
     </div>
   );
 

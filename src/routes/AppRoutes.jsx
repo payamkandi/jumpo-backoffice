@@ -1,9 +1,14 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import { useAuthStore } from "@/store/authStore";
-import WalletHistory from "@/pages/manageUsers/WalletHistory";
-import SellGiftCards from "@/pages/sellGiftCards/SellGiftCards";
-
+const SellGiftCards = lazy(() => import("@/pages/sellGiftCards/SellGiftCards"));
+const PublicDiscountCodes = lazy(
+  () => import("@/pages/discountCodes/PublicDiscountCodes"),
+);
+const PrivateDiscountCodes = lazy(
+  () => import("@/pages/discountCodes/PrivateDiscountCodes"),
+);
+const WalletHistory = lazy(() => import("@/pages/manageUsers/WalletHistory"));
 const Layout = lazy(() => import("@/components/layout/Layout"));
 const Branches = lazy(() => import("@/pages/branches/Branches"));
 const DiscountCodes = lazy(() => import("@/pages/discountCodes/DiscountCodes"));
@@ -54,7 +59,17 @@ const AppRoutes = () => (
         </Route>
         <Route path="/tickets" element={<Tickets />} />
         <Route path="/gift-card-list" element={<GiftCardList />} />
-        <Route path="/discount-codes" element={<DiscountCodes />} />
+        <Route path="/discount-codes">
+          <Route index element={<DiscountCodes />} />
+          <Route
+            path="create-public-discount-code"
+            element={<PublicDiscountCodes />}
+          />
+          <Route
+            path="create-private-discount-code"
+            element={<PrivateDiscountCodes />}
+          />
+        </Route>
         <Route path="/scores-list" element={<ScoreList />} />
         <Route path="/branches" element={<Branches />} />
       </Route>
