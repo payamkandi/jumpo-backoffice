@@ -1,4 +1,4 @@
-import Table from "./_components/Table";
+import Table from "../manageUsers/_components/Table";
 
 function ScoreList() {
   return (

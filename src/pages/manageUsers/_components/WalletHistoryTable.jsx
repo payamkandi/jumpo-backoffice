@@ -1,10 +1,5 @@
 import Table from "@/components/ui/table/Table";
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { createColumnHelper } from "@tanstack/react-table";
 const columnHelper = createColumnHelper();
 
 function WalletHistoryTable({ tableData }) {
@@ -30,12 +25,8 @@ function WalletHistoryTable({ tableData }) {
       cell: (info) => info.getValue(),
     }),
   ];
-  const table = useReactTable({
-    data: tableData,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
-  return <Table table={table} />;
+
+  return <Table columns={columns} data={tableData} />;
 }
 
 export default WalletHistoryTable;

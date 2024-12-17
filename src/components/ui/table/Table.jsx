@@ -1,6 +1,11 @@
-import { flexRender } from "@tanstack/react-table";
+import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
 
-function Table({ table }) {
+function Table({ columns, data }) {
+  const table = useReactTable({
+    columns,
+    data,
+    getCoreRowModel: getCoreRowModel(),
+  });
   return (
     <div className="overflow-y-auto text-nowrap">
       <table className="w-full table-auto border-collapse text-center">
@@ -10,7 +15,7 @@ function Table({ table }) {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="px-4 py-3 sm:text-sm text-xs font-semibold first:rounded-s-lg last:rounded-e-lg sm:h-12 sm:px-4 sm:py-3"
+                  className="px-4 py-3 text-xs font-semibold first:rounded-s-lg last:rounded-e-lg sm:h-12 sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {header.isPlaceholder
                     ? null

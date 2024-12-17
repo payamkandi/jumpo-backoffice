@@ -1,10 +1,6 @@
 import Table from "@/components/ui/table/Table";
 import manageUserContext from "@/contexts/manageUserContext";
-import {
-  createColumnHelper,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { createColumnHelper } from "@tanstack/react-table";
 import { Eye, ShoppingCart, Wallet2 } from "iconsax-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
@@ -82,12 +78,6 @@ function UsersTable({ data }) {
     }),
   ].reverse();
 
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
-
   const openUserDetailsHandler = (id) => {
     const userData = data.find((user) => user.contactNumber === id);
     setUserInfo(userData);
@@ -101,7 +91,7 @@ function UsersTable({ data }) {
     navigate(`/manage-users/wallet-history/${id}`);
   };
 
-  return <Table table={table} />;
+  return <Table columns={columns} data={data} />;
 }
 
 export default UsersTable;

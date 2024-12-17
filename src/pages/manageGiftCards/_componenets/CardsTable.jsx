@@ -2,11 +2,7 @@ import Switch from "@/components/ui/switch/Switch";
 import Table from "@/components/ui/table/Table";
 import ManageCardsContext from "@/contexts/manageCardsContext";
 import { useCardsStore } from "@/store/cardsStore";
-import {
-  createColumnHelper,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { createColumnHelper } from "@tanstack/react-table";
 import { Eye, Trash } from "iconsax-react";
 import { useContext } from "react";
 
@@ -69,12 +65,6 @@ function CardsTable({ data }) {
     }),
   ];
 
-  const table = useReactTable({
-    columns,
-    data,
-    getCoreRowModel: getCoreRowModel(),
-  });
-
   const deleteCardHandler = (id) => {
     setCardIdToDelete(id);
     setDeleteModal(true);
@@ -84,7 +74,7 @@ function CardsTable({ data }) {
     setCardInfo(cardData);
     setInfoModal(true);
   };
-  return <Table table={table} />;
+  return <Table columns={columns} data={data} />;
 }
 
 export default CardsTable;

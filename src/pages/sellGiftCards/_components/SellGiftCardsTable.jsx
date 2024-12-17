@@ -1,10 +1,6 @@
 import Table from "@/components/ui/table/Table";
 import SellGiftCardsContext from "@/contexts/sellGiftCardsContext";
-import {
-  createColumnHelper,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
+import { createColumnHelper } from "@tanstack/react-table";
 import { Eye } from "iconsax-react";
 import { useContext } from "react";
 const columnHelper = createColumnHelper();
@@ -49,6 +45,7 @@ function SellGiftCardsTable({ data }) {
       cell: (info) => (
         <div className="flex items-center justify-center">
           <Eye
+            className="cursor-pointer"
             size={20}
             color="#7E65C6"
             onClick={() => {
@@ -65,12 +62,7 @@ function SellGiftCardsTable({ data }) {
     setInfoModal(true);
   };
 
-  const table = useReactTable({
-    columns,
-    data,
-    getCoreRowModel: getCoreRowModel(),
-  });
-  return <Table table={table} />;
+  return <Table columns={columns} data={data} />;
 }
 
 export default SellGiftCardsTable;

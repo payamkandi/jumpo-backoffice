@@ -5,7 +5,7 @@ import ManageUserContext, {
 } from "@/contexts/manageUserContext";
 import { userInfoMapper } from "@/utils/utils";
 import { useUsersStore } from "@/store/usersStore";
-import UsersTable from "../scoreList/_components/Table";
+import UsersTable from "./_components/Table";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 const defaultData = [
