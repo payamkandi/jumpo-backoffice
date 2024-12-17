@@ -1,13 +1,14 @@
-import Table from "../manageUsers/_components/Table";
+import PageWrapper from "@/components/layout/PageWrapper";
+import Button from "@/components/ui/button/Button";
 
 function ScoreList() {
-  return (
-    <div className="rounded-2xl border border-[#F2F0F9] bg-white p-6">
-      <div className="mb-6">
-        <span>مدیریت مشتریان</span>
-      </div>
-      {/* <Table /> */}
+  const leftNode = (
+    <div>
+      <Button>ورود امتیاز</Button>
     </div>
+  );
+  return (
+    <PageWrapper title="لیست امتیازات" headerLeftNodes={leftNode}></PageWrapper>
   );
 }
 
