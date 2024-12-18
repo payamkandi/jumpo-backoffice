@@ -1,10 +1,3 @@
-import Branches from "@/pages/branches/Branches";
-import DiscountCodes from "@/pages/discountCodes/DiscountCodes";
-import GiftCardList from "@/pages/giftCardList/GiftCardList";
-import GiftCards from "@/pages/manageGiftCards/ManageGiftCards";
-import ManageUsers from "@/pages/manageUsers/ManageUsers";
-import ScoreList from "@/pages/scoreList/ScoreList";
-import Tickets from "@/pages/tickets/Tickets";
 import {
   Chart,
   ElementPlus,
@@ -49,7 +42,23 @@ export const menuItems = [
   },
   {
     icon: LinkSquare,
-    title: "مدیریت شعب",
-    path: "branches",
+    title: "شعب",
+    paths: [
+      {
+        icon: LinkSquare,
+        title: "مدیریت شعب",
+        path: "manage-branches",
+      },
+      {
+        icon: LinkSquare,
+        title: "تعریف شعب",
+        path: "create-branch",
+      },
+      {
+        icon: LinkSquare,
+        title: "شعب آرشیو شده",
+        path: "archived-branches",
+      },
+    ],
   },
 ];
