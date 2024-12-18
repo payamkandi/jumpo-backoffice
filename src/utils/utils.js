@@ -64,4 +64,15 @@ export const discountInfoMapper = (discount) => {
   };
 };
 
+export const scoreInfoMapper = (data) => {
+  return {
+    "نام و نام خانوادگی": data?.name,
+    "کد ملی": data?.nationalCode,
+    "شماره موبایل": data?.mobileNumber,
+    "تاریخ کسب آخرین امتیاز": data?.scoreDate,
+    "مجموع امتیاز": data?.totalScore,
+    "آخرین امتیاز": data?.latestScore,
+  };
+};
+
 export const columnHelper = createColumnHelper();

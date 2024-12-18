@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import { useAuthStore } from "@/store/authStore";
+const AddScore = lazy(() => import("@/pages/scoreList/AddScore"));
 const SellGiftCards = lazy(() => import("@/pages/sellGiftCards/SellGiftCards"));
 const PublicDiscountCodes = lazy(
   () => import("@/pages/discountCodes/PublicDiscountCodes"),
@@ -70,7 +71,10 @@ const AppRoutes = () => (
             element={<PrivateDiscountCodes />}
           />
         </Route>
-        <Route path="/scores-list" element={<ScoreList />} />
+        <Route path="/scores-list">
+          <Route index element={<ScoreList />} />
+          <Route path="add-score" element={<AddScore />} />
+        </Route>
         <Route path="/branches" element={<Branches />} />
       </Route>
       <Route path="*" element={<div>404 - Page Not Found</div>} />

@@ -1,22 +1,39 @@
 import { ArrowDown2 } from "iconsax-react";
 import TextBox from "../textBox/TextBox";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useRef, useEffect } from "react";
 import cx from "classnames";
+
 const dropdownContext = createContext();
 
 function Dropdown({ children, label, onChange, className }) {
   const [value, setValue] = useState("");
   const [dropDown, setDropDown] = useState(false);
+  const dropdownRef = useRef(null);
+
   const toggleDropDown = (e) => {
     e.stopPropagation();
     setDropDown(!dropDown);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropDown(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <dropdownContext.Provider
       value={{ value, setValue, setDropDown, onChange }}
     >
-      <div className={cx("relative", className)}>
+      <div className={cx("relative", className)} ref={dropdownRef}>
         <div
           className="t-[10px] absolute z-[1] h-16 w-full cursor-pointer opacity-0"
           onClick={toggleDropDown}
@@ -28,7 +45,7 @@ function Dropdown({ children, label, onChange, className }) {
           dropdown={true}
         />
         {dropDown && (
-          <div className="absolute left-0 z-[2] top-[60px] flex w-full flex-col border border-[#F2F0F9] bg-white shadow-sm">
+          <div className="absolute left-0 top-[60px] z-[2] flex w-full flex-col border border-[#F2F0F9] bg-white shadow-sm">
             {children}
           </div>
         )}
@@ -53,6 +70,7 @@ function Option({ children, value }) {
     </div>
   );
 }
+
 Dropdown.Option = Option;
 
 export default Dropdown;
