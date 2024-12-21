@@ -1,5 +1,6 @@
 import {
   Chart,
+  Element3,
   ElementPlus,
   I3Square,
   LinkSquare,
@@ -60,5 +61,10 @@ export const menuItems = [
         path: "archived-branches",
       },
     ],
+  },
+  {
+    icon: Element3,
+    title: "درخواست نمایندگی",
+    path: "branch-requests",
   },
 ];

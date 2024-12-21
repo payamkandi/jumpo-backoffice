@@ -42,7 +42,7 @@ function MenuGroupRow({ data }) {
               cx(
                 "flex w-fit items-center gap-2 px-4 py-3 text-neutral-700 hover:cursor-pointer",
                 {
-                  "text-[#735cb4]": isActive,
+                  "!text-[#735cb4]": isActive,
                 },
               )
             }

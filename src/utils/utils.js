@@ -75,4 +75,18 @@ export const scoreInfoMapper = (data) => {
   };
 };
 
+export const branchInfoMapper = (branch) => {
+  return {
+    "شناسه نمایندگی": branch?.branchId,
+    "نام و نام خانوادگی نماینده": branch?.representativeName,
+    "شماره موبایل نماینده": branch?.representativePhone,
+    استان: branch?.province,
+    شهر: branch?.city,
+    آدرس: `${branch?.city}, ${branch?.province}`,
+    "نام کاربری": branch?.username,
+    "وضعیت نمایندگی": branch?.status ? "فعال" : "غیرفعال",
+    "شماره تماس نمایندگی": branch?.representativePhone,
+  };
+};
+
 export const columnHelper = createColumnHelper();

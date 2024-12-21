@@ -11,7 +11,11 @@ const PrivateDiscountCodes = lazy(
 );
 const WalletHistory = lazy(() => import("@/pages/manageUsers/WalletHistory"));
 const Layout = lazy(() => import("@/components/layout/Layout"));
-const Branches = lazy(() => import("@/pages/branches/Branches"));
+const ManageBranches = lazy(() => import("@/pages/branches/ManageBranches"));
+const CreateBranch = lazy(() => import("@/pages/branches/CreateBranch"));
+const ArchivedBranches = lazy(
+  () => import("@/pages/branches/ArchivedBranches"),
+);
 const DiscountCodes = lazy(() => import("@/pages/discountCodes/DiscountCodes"));
 const GiftCardList = lazy(() => import("@/pages/giftCardList/GiftCardList"));
 const CreateGiftCard = lazy(
@@ -75,7 +79,9 @@ const AppRoutes = () => (
           <Route index element={<ScoreList />} />
           <Route path="add-score" element={<AddScore />} />
         </Route>
-        <Route path="/branches" element={<Branches />} />
+        <Route path="/manage-branches" element={<ManageBranches />} />
+        <Route path="/create-branch" element={<CreateBranch />} />
+        <Route path="/archived-branches" element={<ArchivedBranches />} />
       </Route>
       <Route path="*" element={<div>404 - Page Not Found</div>} />
     </Routes>
