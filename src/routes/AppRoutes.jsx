@@ -33,6 +33,9 @@ const PurchaseHistory = lazy(
 );
 const ScoreList = lazy(() => import("@/pages/scoreList/ScoreList"));
 const Tickets = lazy(() => import("@/pages/tickets/Tickets"));
+const BranchRequests = lazy(
+  () => import("@/pages/branchRequests/BranchRequests"),
+);
 
 const ProtectedRoute = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -82,6 +85,7 @@ const AppRoutes = () => (
         <Route path="/manage-branches" element={<ManageBranches />} />
         <Route path="/create-branch" element={<CreateBranch />} />
         <Route path="/archived-branches" element={<ArchivedBranches />} />
+        <Route path="/branch-requests" element={<BranchRequests />} />
       </Route>
       <Route path="*" element={<div>404 - Page Not Found</div>} />
     </Routes>
