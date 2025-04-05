@@ -33,11 +33,13 @@ function Button({
   icon,
   fill = false,
   onClick,
+  ...props
 }) {
   return (
     <button
       className={cx(className, button({ color, size, fill }))}
       onClick={onClick}
+      {...props}
     >
       {icon}
       {children}

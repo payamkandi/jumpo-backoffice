@@ -17,7 +17,7 @@ function CardsTable({ data }) {
       cell: (info) => info.getValue(),
     }),
     columnHelper.accessor("cardId", {
-      header: "شناسه کارت",
+      header: "شناسه کارت هدیه در باشگاه",
       cell: (info) => info.getValue(),
     }),
     columnHelper.accessor("cardName", {
