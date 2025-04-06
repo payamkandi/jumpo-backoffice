@@ -30,9 +30,9 @@ jobs:
     - run: npm test
 
     - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
+      uses: SamKirkland/FTP-Deploy-Action@4.3.5
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist
