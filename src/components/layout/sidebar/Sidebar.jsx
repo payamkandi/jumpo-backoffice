@@ -1,8 +1,6 @@
 import Menu from "./menu/Menu";
-import Logout from "./Logout";
 import { useLayoutStore } from "@/store/layoutStore";
 import cx from "classnames";
-import { LogoutCurve } from "iconsax-react";
 
 function Sidebar() {
   const { sidebar, setSidebar } = useLayoutStore();
@@ -23,12 +21,12 @@ function Sidebar() {
         )}
       >
         <Menu />
-        <Logout>
+        {/* <Logout>
           <div className="flex w-fit cursor-pointer items-center gap-2 px-2 py-3 hover:cursor-pointer hover:text-[#735cb4]">
             <LogoutCurve />
             <span className="text-sm font-semibold">خروج از حساب کاربری</span>
           </div>
-        </Logout>
+        </Logout> */}
       </div>
     </>
   );

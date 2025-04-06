@@ -8,7 +8,7 @@ function MenuRow({ icon, title, path }) {
       replace
       className={({ isActive }) =>
         cx(
-          "flex w-full items-center gap-2 rounded-2xl px-2 py-3 hover:cursor-pointer",
+          "flex w-full items-center gap-2 rounded-2xl px-4 py-3 hover:cursor-pointer",
           {
             "bg-[#7143D2] text-white": isActive,
           },
