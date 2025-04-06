@@ -2,6 +2,7 @@ import {
   Chart,
   Element3,
   ElementPlus,
+  Home,
   I3Square,
   LinkSquare,
   Money,
@@ -21,8 +22,14 @@ import {
   CREATE_BRANCH,
   ARCHIVED_BRANCHES,
   BRANCH_REQUESTS,
+  HOME,
 } from "./routes";
 export const MENU_ITEMS = [
+  {
+    icon: Home,
+    title: "خانه",
+    path: HOME,
+  },
   {
     icon: Profile2User,
     title: "مدیریت مشتریان",

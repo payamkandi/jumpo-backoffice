@@ -1,5 +1,11 @@
+import PageWrapper from "@/components/layout/PageWrapper";
+
 function Home() {
-  return <div>HOME</div>;
+  return (
+    <PageWrapper title="داشبورد">
+      <div>HOME</div>
+    </PageWrapper>
+  );
 }
 
 export default Home;
