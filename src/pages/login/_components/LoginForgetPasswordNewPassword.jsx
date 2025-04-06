@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import TextBox from "@/components/ui/textBox/TextBox";
 import { useLoginStore } from "@/store/loginStore";
 

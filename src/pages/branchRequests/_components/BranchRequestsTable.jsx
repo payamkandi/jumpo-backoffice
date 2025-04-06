@@ -1,4 +1,4 @@
-import Table from "@/components/ui/table/Table";
+import Table from "@/components/ui/Table";
 import { columnHelper } from "@/utils/utils";
 
 function BranchRequestsTable({ data }) {

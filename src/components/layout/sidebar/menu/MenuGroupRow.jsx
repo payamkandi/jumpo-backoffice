@@ -13,14 +13,16 @@ function MenuGroupRow({ data }) {
       }}
     >
       <div
-        className="flex items-center justify-between"
+        className={cx("flex items-center justify-between rounded-2xl", {
+          "bg-[#7143D2] text-white": isActive,
+        })}
         onClick={() => setIsActive(!isActive)}
       >
         <div
           className={cx(
             "flex w-fit items-center gap-2 px-2 py-3 hover:cursor-pointer",
             {
-              "text-[#735cb4]": isActive,
+              "text-white": isActive,
             },
           )}
         >
@@ -32,7 +34,7 @@ function MenuGroupRow({ data }) {
         />
       </div>
 
-      <div className="overflow-hidden rounded-lg bg-[#F2F0F9] transition-all">
+      <div className="overflow-hidden rounded-2xl bg-[#F6F5FD] transition-all">
         {data.paths.map((path) => (
           <NavLink
             key={path.title}
@@ -40,14 +42,16 @@ function MenuGroupRow({ data }) {
             replace
             className={({ isActive }) =>
               cx(
-                "flex w-fit items-center gap-2 px-4 py-3 text-neutral-700 hover:cursor-pointer",
+                "relative flex w-fit items-center gap-2 py-3 pr-10 text-[#1F2937] after:absolute after:start-0 after:h-[25px] after:w-[2px] after:rounded-full after:bg-[#7143D2] hover:cursor-pointer",
                 {
-                  "!text-[#735cb4]": isActive,
+                  "!text-[#7143D2]": isActive,
+                },
+                {
+                  "after:hidden": !isActive,
                 },
               )
             }
           >
-            {<path.icon />}
             <span>{path.title}</span>
           </NavLink>
         ))}

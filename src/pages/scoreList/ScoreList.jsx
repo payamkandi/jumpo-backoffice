@@ -1,6 +1,6 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import Button from "@/components/ui/Button";
+import InfoModal from "@/components/ui/InfoModal";
 import { useScoreStore } from "@/store/scoreStore";
 import ScoresTable from "./_components/ScoresTable";
 import ScoresContext, { ScoresProvider } from "@/contexts/scoresContext";

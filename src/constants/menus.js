@@ -70,17 +70,14 @@ export const MENU_ITEMS = [
     title: "شعب",
     paths: [
       {
-        icon: LinkSquare,
         title: "مدیریت شعب",
         path: MANAGE_BRANCHES,
       },
       {
-        icon: LinkSquare,
         title: "تعریف شعب",
         path: CREATE_BRANCH,
       },
       {
-        icon: LinkSquare,
         title: "شعب آرشیو شده",
         path: ARCHIVED_BRANCHES,
       },

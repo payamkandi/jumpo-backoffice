@@ -1,5 +1,5 @@
 import Switch from "@/components/ui/switch/Switch";
-import Table from "@/components/ui/table/Table";
+import Table from "@/components/ui/Table";
 import DiscountsContext from "@/contexts/discountsContext";
 import { useDiscountsStore } from "@/store/discountStore";
 import { columnHelper } from "@/utils/utils";

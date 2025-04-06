@@ -1,12 +1,12 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import { useDiscountsStore } from "@/store/discountStore";
 import DiscountsTable from "./_components/DiscountsTable";
 import DiscountsContext, {
   DiscountsProvider,
 } from "@/contexts/discountsContext";
 import DeleteDiscountModal from "./_components/DeleteDiscountModal";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import { useContext, useEffect } from "react";
 import { discountInfoMapper } from "@/utils/utils";
 import { useNavigate } from "react-router";

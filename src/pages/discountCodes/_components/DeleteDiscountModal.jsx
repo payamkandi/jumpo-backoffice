@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/modal/Modal";
 import DiscountsContext from "@/contexts/discountsContext";
 import { CloseSquare } from "iconsax-react";

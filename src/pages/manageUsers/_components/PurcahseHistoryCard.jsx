@@ -1,10 +1,10 @@
 import { Calendar, Call, Location, People, Timer1 } from "iconsax-react";
 import cx from "classnames";
-import TitleValue from "@/components/ui/titleValue/TitleValue";
+import TitleValue from "@/components/ui/TitleValue";
 function PurcahseHistoryCard() {
   return (
     <div className="flex flex-col gap-2 rounded-2xl bg-[#F2F0F9] px-3 py-2 sm:gap-4 sm:px-6 sm:py-4">
-      <div className="grid grid-cols-1 gap-y-1 sm:grid-cols-2 sm:gap-y-2 px-2">
+      <div className="grid grid-cols-1 gap-y-1 px-2 sm:grid-cols-2 sm:gap-y-2">
         <TitleValue title="تاریخ خرید" value="1404/06/06" />
         <TitleValue title="وضعیت" value="فعال" />
         <TitleValue title="شماره بلیت" value="345532534" />

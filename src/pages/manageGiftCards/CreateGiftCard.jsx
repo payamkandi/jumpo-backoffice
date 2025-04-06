@@ -1,5 +1,5 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import TextBox from "@/components/ui/textBox/TextBox";
 
 function CreateGiftCard() {

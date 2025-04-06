@@ -1,5 +1,5 @@
-import Button from "@/components/ui/button/Button";
-import Dropdown from "@/components/ui/dropdown/Dropdown";
+import Button from "@/components/ui/Button";
+import Dropdown from "@/components/ui/Dropdown";
 import TextBox from "@/components/ui/textBox/TextBox";
 
 function NewUserScoreForm() {

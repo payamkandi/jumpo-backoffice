@@ -2,7 +2,7 @@ import PageWrapper from "@/components/layout/PageWrapper";
 import useTicketStore from "@/store/ticketStore";
 import { useContext, useEffect } from "react";
 import TicketsTable from "./_components/TicketsTable";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import TicketContext, {
   TicketContextProvider,
 } from "@/contexts/ticketsContext";

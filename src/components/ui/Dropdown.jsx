@@ -1,5 +1,5 @@
 import { ArrowDown2 } from "iconsax-react";
-import TextBox from "../textBox/TextBox";
+import TextBox from "./textBox/TextBox";
 import { createContext, useContext, useState, useRef, useEffect } from "react";
 import cx from "classnames";
 

@@ -1,5 +1,5 @@
-import OTP from "../../../components/ui/otp/OTP";
-import Button from "@/components/ui/button/Button";
+import OTP from "../../../components/ui/OTP";
+import Button from "@/components/ui/Button";
 import { useLoginStore } from "@/store/loginStore";
 
 function LoginForgetPasswordOTP({ nextStep }) {

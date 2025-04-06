@@ -1,4 +1,4 @@
-import Table from "@/components/ui/table/Table";
+import Table from "@/components/ui/Table";
 import ScoresContext from "@/contexts/scoresContext";
 import { columnHelper } from "@/utils/utils";
 import { Eye } from "iconsax-react";

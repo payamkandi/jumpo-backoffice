@@ -7,9 +7,15 @@ function MenuRow({ icon, title, path }) {
       to={path.replace("/", "")}
       replace
       className={({ isActive }) =>
-        cx("flex w-fit items-center gap-2 px-2 py-3 hover:cursor-pointer", {
-          "text-[#735cb4]": isActive,
-        })
+        cx(
+          "flex w-full items-center gap-2 rounded-2xl px-2 py-3 hover:cursor-pointer",
+          {
+            "bg-[#7143D2] text-white": isActive,
+          },
+          {
+            "hover:text-black hover:bg-[#DFDBF9]": !isActive,
+          },
+        )
       }
     >
       {icon}

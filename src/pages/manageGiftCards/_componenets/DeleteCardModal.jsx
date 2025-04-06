@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/modal/Modal";
 import ManageCardsContext from "@/contexts/manageCardsContext";
 import { CloseSquare } from "iconsax-react";

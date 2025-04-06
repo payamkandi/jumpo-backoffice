@@ -1,5 +1,5 @@
 import Switch from "@/components/ui/switch/Switch";
-import Table from "@/components/ui/table/Table";
+import Table from "@/components/ui/Table";
 import BranchesContext from "@/contexts/branchesContext";
 import { columnHelper } from "@/utils/utils";
 import { Eye, MoneyArchive } from "iconsax-react";

@@ -2,7 +2,7 @@ import PageWrapper from "@/components/layout/PageWrapper";
 import { useBranchesStore } from "@/store/branchStore";
 import { useContext, useEffect } from "react";
 import BranchesContext, { BranchesProvider } from "@/contexts/branchesContext";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import { branchInfoMapper } from "@/utils/utils";
 import ArchivedBranchTable from "./_components/ArchivedBranchTable";
 import UnarchiveModal from "./_components/UnarchivModal";

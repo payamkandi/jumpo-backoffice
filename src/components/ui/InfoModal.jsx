@@ -1,5 +1,5 @@
 import { CloseSquare } from "iconsax-react";
-import Modal from "../modal/Modal";
+import Modal from "./modal/Modal";
 
 function InfoModal({ data, title, isOpen, toggle }) {
   if (!data) return null;
@@ -22,7 +22,9 @@ function InfoModal({ data, title, isOpen, toggle }) {
                   <bdi>{item.title}</bdi>
                 </span>
                 {" : "}
-                <span className="text-sm font-semibold text-[#1D262B]">{item.value}</span>
+                <span className="text-sm font-semibold text-[#1D262B]">
+                  {item.value}
+                </span>
               </div>
             ))}
         </div>

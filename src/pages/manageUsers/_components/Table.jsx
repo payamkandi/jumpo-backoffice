@@ -1,10 +1,9 @@
-import Table from "@/components/ui/table/Table";
+import Table from "@/components/ui/Table";
 import manageUserContext from "@/contexts/manageUserContext";
 import { columnHelper } from "@/utils/utils";
 import { Eye, ShoppingCart, Wallet2 } from "iconsax-react";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
-
 
 function UsersTable({ data }) {
   const { setUserInfo, setInfoModal } = useContext(manageUserContext);

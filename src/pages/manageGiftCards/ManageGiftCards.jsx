@@ -1,11 +1,11 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import { useCardsStore } from "@/store/cardsStore";
 import { useEffect } from "react";
 import CardsTable from "./_componenets/CardsTable";
 import { useNavigate } from "react-router";
 import { ManageCardsProvider } from "@/contexts/manageCardsContext";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import ManageCardsContext from "@/contexts/manageCardsContext";
 import { cardInfoMapper } from "@/utils/utils";
 import { useContext } from "react";

@@ -1,16 +1,17 @@
-import ToggleSideBar from "../ui/toggleSideBar/ToggleSideBar";
+import ToggleSideBar from "../ui/ToggleSideBar";
+import Header from "./Header";
 import Sidebar from "./sidebar/Sidebar";
 
 function Layout({ children }) {
   return (
-    <div className="relative flex h-full w-full">
+    <main className="relative h-full w-full bg-[#F3F4F6]">
       <ToggleSideBar />
-      <Sidebar />
-      <div className="flex w-full flex-col overflow-x-hidden bg-[#F9FAFA]">
-        <div className="h-20 shrink-0 border-b border-[#F2F0F9] bg-white"></div>
-        <div className="overflow-y-auto p-3 sm:p-6">{children}</div>
+      <Header />
+      <div className="flex h-[calc(100%-90px)] pb-[55px] w-full gap-2 px-6">
+        <Sidebar />
+        <div className="flex-1 overflow-auto">{children}</div>
       </div>
-    </div>
+    </main>
   );
 }
 

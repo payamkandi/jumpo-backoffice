@@ -1,8 +1,9 @@
-import { Profile } from "iconsax-react";
 import Menu from "./menu/Menu";
 import Logout from "./Logout";
 import { useLayoutStore } from "@/store/layoutStore";
 import cx from "classnames";
+import { LogoutCurve } from "iconsax-react";
+
 function Sidebar() {
   const { sidebar, setSidebar } = useLayoutStore();
   return (
@@ -15,20 +16,19 @@ function Sidebar() {
       />
       <div
         className={cx(
-          "absolute right-[-300px] z-10 flex h-full shrink-0 flex-col justify-between overflow-y-auto bg-white px-6 pb-6 pt-12 shadow-sidebar transition-all duration-500 md:static",
+          "absolute right-[-300px] z-10 flex h-full w-[288px] shrink-0 flex-col overflow-y-auto rounded-3xl border border-[#E5E7EB] bg-white px-6 pb-6 pt-8 shadow-sidebar transition-all duration-500 md:static md:shadow-none",
           {
             "right-[0px]": sidebar,
           },
         )}
       >
-        <div className="flex shrink-0 flex-col items-center justify-center">
-          <div className="flex size-16 shrink-0 items-center justify-center rounded-full border-2 border-secondary-tint-40 bg-[#F2F0F9]">
-            <Profile size={42} color="#7e65c6" />
+        <Menu />
+        <Logout>
+          <div className="flex w-fit cursor-pointer items-center gap-2 px-2 py-3 hover:cursor-pointer hover:text-[#735cb4]">
+            <LogoutCurve />
+            <span className="text-sm font-semibold">خروج از حساب کاربری</span>
           </div>
-          <span className="mt-4 text-sm font-semibold">سعید سعیدی</span>
-          <Menu />
-        </div>
-        <Logout />
+        </Logout>
       </div>
     </>
   );

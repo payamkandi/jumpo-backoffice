@@ -4,7 +4,7 @@ import MenuGroupRow from "./MenuGroupRow";
 
 function Menu() {
   return (
-    <div className="mt-8 text-sm font-semibold">
+    <div className="text-sm font-semibold">
       {MENU_ITEMS.map((item) => {
         if ("paths" in item) {
           return <MenuGroupRow key={item.title} data={item} />;

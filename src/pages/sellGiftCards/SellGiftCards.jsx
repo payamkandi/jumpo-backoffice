@@ -1,5 +1,5 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import SellGiftCardsContext, {
   SellGiftCardsProvider,
 } from "@/contexts/sellGiftCardsContext";

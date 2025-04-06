@@ -1,10 +1,9 @@
-import { LogoutCurve } from "iconsax-react";
 import Modal from "../../ui/modal/Modal";
 import { useState } from "react";
 import { useAuthStore } from "../../../store/authStore";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 
-function Logout() {
+function Logout({ children }) {
   const logout = useAuthStore((state) => state.logout);
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
@@ -25,13 +24,7 @@ function Logout() {
           </div>
         </div>
       </Modal>
-      <div
-        className="flex w-fit cursor-pointer items-center gap-2 px-2 py-3 hover:cursor-pointer hover:text-[#735cb4]"
-        onClick={() => setModal(true)}
-      >
-        <LogoutCurve />
-        <span>خروج</span>
-      </div>
+      <div onClick={() => setModal(true)}>{children}</div>
     </>
   );
 }

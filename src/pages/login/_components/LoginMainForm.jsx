@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { useAuthStore } from "../../../store/authStore";
 import { useLoginStore } from "../../../store/loginStore";
 import { Refresh } from "iconsax-react";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import TextBox from "@/components/ui/textBox/TextBox";
 
 function LoginMainForm() {

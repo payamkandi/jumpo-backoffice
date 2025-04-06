@@ -1,4 +1,4 @@
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import { useContext, useEffect } from "react";
 import ManageUserContext, {
   ManageUserProvider,

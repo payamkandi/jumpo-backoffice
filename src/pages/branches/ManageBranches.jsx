@@ -1,10 +1,10 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Button from "@/components/ui/button/Button";
+import Button from "@/components/ui/Button";
 import { useBranchesStore } from "@/store/branchStore";
 import { useContext, useEffect } from "react";
 import ManageBranchTable from "./_components/ManageBranchTable";
 import BranchesContext, { BranchesProvider } from "@/contexts/branchesContext";
-import InfoModal from "@/components/ui/infoModal/InfoModal";
+import InfoModal from "@/components/ui/InfoModal";
 import ArchiveModal from "./_components/ArchiveModal";
 import { branchInfoMapper } from "@/utils/utils";
 import { useNavigate } from "react-router";

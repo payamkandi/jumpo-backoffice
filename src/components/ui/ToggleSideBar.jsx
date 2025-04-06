@@ -1,6 +1,6 @@
 import { useLayoutStore } from "@/store/layoutStore";
-import BurgerMenuIcon from "../burgerMenuIcon/BurgerMenuIcon";
 import cx from "classnames";
+import BurgerMenuIcon from "./BurgerMenuIcon";
 function ToggleSideBar() {
   const { sidebar, toggleSideBar } = useLayoutStore();
   return (
