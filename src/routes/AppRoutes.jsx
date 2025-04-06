@@ -1,6 +1,28 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router";
 import { useAuthStore } from "@/store/authStore";
+import {
+  ADD_SCORE,
+  ARCHIVED_BRANCHES,
+  BRANCH_REQUESTS,
+  CREATE_BRANCH,
+  CREATE_GIFT_CARD,
+  CREATE_PRIVATE_DISCOUNT_CODE,
+  CREATE_PUBLIC_DISCOUNT_CODE,
+  DISCOUNT_CODES,
+  GIFT_CARD_LIST,
+  HOME,
+  LOGIN,
+  MANAGE_BRANCHES,
+  MANAGE_GIFT_CARDS,
+  MANAGE_USERS,
+  PURCHASE_HISTORY,
+  SCORES_LIST,
+  SELL_GIFT_CARDS,
+  TICKETS,
+  WALLET_HISTORY,
+} from "@/constants/routes";
+import Home from "@/pages/home/Home";
 const AddScore = lazy(() => import("@/pages/scoreList/AddScore"));
 const SellGiftCards = lazy(() => import("@/pages/sellGiftCards/SellGiftCards"));
 const PublicDiscountCodes = lazy(
@@ -44,48 +66,52 @@ const ProtectedRoute = () => {
       <Outlet />
     </Layout>
   ) : (
-    <Navigate to="/" />
+    <Navigate to={LOGIN} />
   );
 };
 
 const AppRoutes = () => (
   <Suspense fallback={<div>Loading...</div>}>
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path={LOGIN} element={<Login />} />
       <Route element={<ProtectedRoute />}>
-        <Route path="/manage-users">
+        <Route path={HOME} element={<Home />} />
+        <Route path={MANAGE_USERS}>
           <Route index element={<ManageUsersWithProvider />} />
-          <Route path="purchase-history/:id" element={<PurchaseHistory />} />
-          <Route path="wallet-history/:id" element={<WalletHistory />} />
+          <Route
+            path={PURCHASE_HISTORY + "/:id"}
+            element={<PurchaseHistory />}
+          />
+          <Route path={WALLET_HISTORY + "/:id"} element={<WalletHistory />} />
         </Route>
-        <Route path="/manage-gift-cards">
+        <Route path={MANAGE_GIFT_CARDS}>
           <Route index element={<ManageGiftCards />} />
-          <Route path="create-gift-card" element={<CreateGiftCard />} />
+          <Route path={CREATE_GIFT_CARD} element={<CreateGiftCard />} />
         </Route>
-        <Route path="/sell-gift-cards">
+        <Route path={SELL_GIFT_CARDS}>
           <Route index element={<SellGiftCards />} />
         </Route>
-        <Route path="/tickets" element={<Tickets />} />
-        <Route path="/gift-card-list" element={<GiftCardList />} />
-        <Route path="/discount-codes">
+        <Route path={TICKETS} element={<Tickets />} />
+        <Route path={GIFT_CARD_LIST} element={<GiftCardList />} />
+        <Route path={DISCOUNT_CODES}>
           <Route index element={<DiscountCodes />} />
           <Route
-            path="create-public-discount-code"
+            path={DISCOUNT_CODES + CREATE_PUBLIC_DISCOUNT_CODE}
             element={<PublicDiscountCodes />}
           />
           <Route
-            path="create-private-discount-code"
+            path={DISCOUNT_CODES + CREATE_PRIVATE_DISCOUNT_CODE}
             element={<PrivateDiscountCodes />}
           />
         </Route>
-        <Route path="/scores-list">
+        <Route path={SCORES_LIST}>
           <Route index element={<ScoreList />} />
-          <Route path="add-score" element={<AddScore />} />
+          <Route path={ADD_SCORE} element={<AddScore />} />
         </Route>
-        <Route path="/manage-branches" element={<ManageBranches />} />
-        <Route path="/create-branch" element={<CreateBranch />} />
-        <Route path="/archived-branches" element={<ArchivedBranches />} />
-        <Route path="/branch-requests" element={<BranchRequests />} />
+        <Route path={MANAGE_BRANCHES} element={<ManageBranches />} />
+        <Route path={CREATE_BRANCH} element={<CreateBranch />} />
+        <Route path={ARCHIVED_BRANCHES} element={<ArchivedBranches />} />
+        <Route path={BRANCH_REQUESTS} element={<BranchRequests />} />
       </Route>
       <Route path="*" element={<div>404 - Page Not Found</div>} />
     </Routes>

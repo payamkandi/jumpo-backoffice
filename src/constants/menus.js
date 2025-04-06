@@ -9,37 +9,54 @@ import {
   Rank,
 } from "iconsax-react";
 
-export const menuItems = [
+import {
+  MANAGE_USERS,
+  MANAGE_GIFT_CARDS,
+  SELL_GIFT_CARDS,
+  TICKETS,
+  GIFT_CARD_LIST,
+  DISCOUNT_CODES,
+  SCORES_LIST,
+  MANAGE_BRANCHES,
+  CREATE_BRANCH,
+  ARCHIVED_BRANCHES,
+  BRANCH_REQUESTS,
+} from "./routes";
+export const MENU_ITEMS = [
   {
     icon: Profile2User,
     title: "مدیریت مشتریان",
-    path: "manage-users",
+    path: MANAGE_USERS,
   },
   {
     icon: Rank,
     title: "مدیریت کارت هدیه",
-    path: "manage-gift-cards",
+    path: MANAGE_GIFT_CARDS,
   },
   {
     icon: Money,
     title: "فروش کارت هدیه",
-    path: "sell-gift-cards",
+    path: SELL_GIFT_CARDS,
   },
-  { icon: Chart, title: "لیست فروش بلیت", path: "tickets" },
+  {
+    icon: Chart,
+    title: "لیست فروش بلیت",
+    path: TICKETS,
+  },
   {
     icon: I3Square,
     title: "لیست فروش کارت هدیه",
-    path: "gift-card-list",
+    path: GIFT_CARD_LIST,
   },
   {
     icon: I3Square,
     title: "کد تخفیف",
-    path: "discount-codes",
+    path: DISCOUNT_CODES,
   },
   {
     icon: ElementPlus,
     title: "لیست امتیازات",
-    path: "scores-list",
+    path: SCORES_LIST,
   },
   {
     icon: LinkSquare,
@@ -48,23 +65,23 @@ export const menuItems = [
       {
         icon: LinkSquare,
         title: "مدیریت شعب",
-        path: "manage-branches",
+        path: MANAGE_BRANCHES,
       },
       {
         icon: LinkSquare,
         title: "تعریف شعب",
-        path: "create-branch",
+        path: CREATE_BRANCH,
       },
       {
         icon: LinkSquare,
         title: "شعب آرشیو شده",
-        path: "archived-branches",
+        path: ARCHIVED_BRANCHES,
       },
     ],
   },
   {
     icon: Element3,
     title: "درخواست نمایندگی",
-    path: "branch-requests",
+    path: BRANCH_REQUESTS,
   },
 ];

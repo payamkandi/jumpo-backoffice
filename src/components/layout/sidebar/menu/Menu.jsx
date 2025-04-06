@@ -1,11 +1,11 @@
-import { menuItems } from "@/constants/menus";
+import { MENU_ITEMS } from "@/constants/menus";
 import MenuRow from "./MenuRow";
 import MenuGroupRow from "./MenuGroupRow";
 
 function Menu() {
   return (
     <div className="mt-8 text-sm font-semibold">
-      {menuItems.map((item) => {
+      {MENU_ITEMS.map((item) => {
         if ("paths" in item) {
           return <MenuGroupRow key={item.title} data={item} />;
         } else {

@@ -25,9 +25,7 @@ function Sidebar() {
           <div className="flex size-16 shrink-0 items-center justify-center rounded-full border-2 border-secondary-tint-40 bg-[#F2F0F9]">
             <Profile size={42} color="#7e65c6" />
           </div>
-          <span className="mt-4 text-sm font-semibold">
-            آیدین مدرس اول (مدیر)
-          </span>
+          <span className="mt-4 text-sm font-semibold">سعید سعیدی</span>
           <Menu />
         </div>
         <Logout />

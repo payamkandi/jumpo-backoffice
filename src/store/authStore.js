@@ -3,11 +3,11 @@ import { useLayoutStore } from "./layoutStore";
 import { useUsersStore } from "./usersStore";
 
 export const useAuthStore = create((set) => ({
-  isAuthenticated: false,
+  isAuthenticated: true,
   userInfo: null,
   login: (navigate) => {
     set({ isAuthenticated: true });
-    navigate("/manage-users");
+    navigate("/");
   },
   logout: () => {
     useLayoutStore.getState().reset();
